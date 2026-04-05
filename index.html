@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Hero Section</title>
+    <!-- <img src="logo.jpeg" alt="Favicon" class="hidden active"> -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary)',
+                        secondary: 'var(--secondary)',
+                        gold: {
+                            400: 'var(--gold-400)',
+                            500: 'var(--gold-500)'
+                        },
+                        cyan: {
+                            400: 'var(--[var(--primary)])',
+                            500: 'var(--cyan-500)'
+                        },
+                        pink: {
+                            500: 'var(--pink-500)',
+                            600: 'var(--pink-600)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description"
+        content="Smart business promotion helps you reach the right audience and grow faster in the digital world. Boost your brand visibility, increase leads, and turn visitors into loyal customers.">
+    <meta name="keywords"
+        content="digital marketing, local SEO, Google Business Profile, website development, lead generation, business growth, online visibility, customer acquisition">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <link rel="apple-touch-icon" href="logo.jpeg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .blob-shape {
+            border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+            background: linear-gradient(135deg, #6A016A 0%, #5A005A 100%);
+            box-shadow: 0 0 50px rgba(106, 1, 106, 0.5);
+        }
+
+  
+        :root {
+            /* Core Colors - Updated with your specific Gold & Purple */
+            --primary: #d3aa6a;         /* Aapka Gold color */
+            --secondary: #6A016A;       /* Aapka Vibrant Purple */
+
+            /* Accent Colors - Using your 4 requested shades */
+            --gold-400: #e6c796;        /* Light Gold for hover */
+            --gold-500: #d3aa6a;        /* Aapka Main Gold */
+            
+            --cyan-400: #6A016A;        /* Aapka Purple 1 */
+            --cyan-500: #5A005A;        /* Aapka Purple 2 */
+            
+            --pink-500: #4B014B;        /* Aapka Deep Purple */
+            --pink-600: #310031;        /* Darker shade for contrast */
+
+            /* Grays & Neutrals - Deep Purple based darks (Better than Black) */
+            --gray-700: #374151;
+            --gray-400: #9CA3AF;
+            --bg-dark: #0d000d;         /* Extreme Dark Purple base */
+            --bg-darker: #1a001a;       /* Dark Purple section background */
+
+            /* Text & Shadows - Updated to match your Gold */
+            --text-muted: #9CA3AF;
+            --shadow-primary: 0 0 20px rgba(211, 170, 106, 0.4);
+            --shadow-gold: 0 0 25px rgba(211, 170, 106, 0.6);
+            body {
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at top right, #4B014B, transparent 40%),
+                      radial-gradient(circle at bottom left, #120112, transparent 40%);
+        }
+        #about,#services,#portfolio,#contact,#success,#smart,#trust,#footer {
+    background: linear-gradient(to bottom, var(--bg-dark), var(--bg-darker));
+    position: relative;
+    overflow: hidden;
+}
+    }
+    
+
+        /* --- SCROLL AUTOMATION CSS --- */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Cursor or Card Glow Effect */
+        .group:hover {
+            box-shadow: 0 0 30px rgba(106, 1, 106, 0.15);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Gradient Text Animation */
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .bg-gradient-to-r {
+            background-size: 200% 200%;
+            animation: gradientFlow 5s ease infinite;
+        }
+
+        /* Animated Spin for Borders */
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 4s linear infinite;
+            scale: 2;
+            /* Border cover karne ke liye scale badhaya hai */
+        }
+
+        /* Seamless Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            display: inline-flex;
+            animation: marquee 20s linear infinite;
+            width: max-content;
+        }
+
+        /* Hover effects for marquee items */
+        .animate-marquee span {
+            transition: all 0.3s ease;
+        }
+
+        /* Testimonial Marquee Animation */
+        @keyframes marquee-fast {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee-fast {
+            display: flex;
+            width: max-content;
+            animation: marquee-fast 30s linear infinite;
+        }
+
+        /* Pause animation on hover for readability */
+        .hover\:pause:hover {
+            animation-play-state: paused;
+        }
+
+        /* Glassmorphism card subtle glow */
+        .bg-\[\#0a253a\]\/60:hover {
+            box-shadow: 0 0 40px rgba(106, 1, 106, 0.1);
+        }
+
+        /* Card Hover Glow */
+        .md\:col-span-8:hover {
+            box-shadow: 0 20px 50px rgba(34, 211, 238, 0.1);
+            transform: translateY(-5px);
+            transition: all 0.4s ease;
+        }
+
+        .md\:col-span-4:hover,
+        .md\:col-span-5:hover,
+        .md\:col-span-7:hover {
+            transform: translateY(-5px);
+            transition: all 0.4s ease;
+        }
+
+        /* --- PREMIUM CUSTOM SCROLLBAR --- */
+        /* Enable default white arrow cursor */
+        /* 1. Default Arrow Cursor ko ON rakhein */
+        html,
+        body,
+        a,
+        button {
+            cursor: auto !important;
+        }
+
+        /* 2. Outer Thin Circle (Image jaisa) */
+        #cursor-outline {
+            position: fixed;
+            width: 45px;
+            height: 45px;
+            border: 1.5px solid #6A016A;
+            /* Image jaisa light brown/nude color */
+            border-radius: 50%;
+            z-index: 9998;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            /* Isse ring smooth peeche chalti hai */
+            transition: width 0.3s, height 0.3s, border-color 0.3s;
+        }
+
+        /* 3. Inner Solid Middle Dot (Image jaisa) */
+        #cursor-inner-dot {
+            position: fixed;
+            width: 18px;
+            height: 18px;
+            background-color: #d3aa6a;
+            /* Image jaisa solid middle dot color */
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        /* 4. Hover Effect: Link par jane par design change */
+        .cursor-hover-active #cursor-outline {
+            width: 60px;
+            height: 60px;
+            border-color: #6A016A;
+            /* Aapki theme ka Purple color */
+            border-width: 2px;
+        }
+
+        .cursor-hover-active #cursor-inner-dot {
+            background-color: #db2777;
+            /* Hover par middle dot Pink ho jayega */
+            transform: translate(-50%, -50%) scale(0.5);
+        }
+
+        @keyframes moveDots {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-40px, -40px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#081b29] text-white overflow-x-hidden">
+    <div id="cursor-outline"></div>
+    <div id="cursor-inner-dot"></div>
+ <header class="w-[95%] max-w-7xl mx-auto mt-4 z-50 flex items-center gap-4">
+
+    <!-- Logo (LEFT SIDE - OUTSIDE BOX) -->
+    <img src="menulogo.png" class="h-12 w-auto object-contain">
+
+    <!-- ORIGINAL HEADER BOX (UNCHANGED) -->
+    <div
+        class="flex-1 bg-white border border-gray-700 rounded-full px-6 md:px-10 py-4 flex justify-between items-center shadow-lg">
+
+        <!-- Logo Text -->
+        <div class="text-2xl font-bold text-[var(--primary)]">
+           Smart Business <span class="text-[var(--secondary)]">Promotion</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-8">
+            <a href="#"
+                class="relative text-[var(--primary)] font-bold after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[var(--primary)]">
+                Home
+            </a>
+            <a href="#about"
+                class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                About
+            </a>
+            <a href="#services"
+                class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                Services
+            </a>
+            <a href="#portfolio"
+                class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                Portfolio
+            </a>
+        </nav>
+
+        <!-- Contact Button -->
+        <a href="#contact"
+            class="hidden md:block bg-[var(--secondary)] font-bold hover:bg-purple-600 px-6 py-2 rounded-full font-semibold transition">
+            Contact Now
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-black text-2xl">
+            ☰
+        </button>
+    </div>
+
+</header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="hidden fixed inset-0 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-6 text-white text-xl z-50">
+
+        <a href="#" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+
+        <button class="bg-[var(--secondary)] px-6 py-2 rounded-md">
+            Contact Me
+        </button>
+
+        <!-- Close Button -->
+        <button onclick="closeMenu()" class="absolute top-6 right-6 text-3xl">✕</button>
+    </div>
+
+    <!-- Script -->
+
+
+    <section class="flex flex-col md:flex-row items-center justify-between px-10 py-16 max-w-7xl mx-auto min-h-[80vh]">
+
+        <div class="relative w-72 h-80 md:w-[400px] md:h-[450px] flex items-center justify-center">
+            <div class="blob-shape absolute inset-0 animate-pulse"></div>
+            <img src="hero.png" alt="Profile" class="relative z-10 w-[75%] h-[90%] object-cover rounded-full">
+        </div>
+
+        <div class="md:w-1/2 mt-10 md:mt-0 space-y-6 text-center md:text-left">
+            <!-- <h3 class="text-xl font-medium">Hello, I'm</h3> -->
+
+            <h1 class="text-5xl md:text-6xl font-bold">Business Growth Boost</h1>
+            <h3 class="text-2xl md:text-3xl font-semibold">And I'm a <span id="typing-text"
+                    class="bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--primary)] text-transparent bg-clip-text">
+                </span></h3>
+
+            <p class="text-gray-300 leading-relaxed max-w-md">
+                Smart business promotion helps you reach the right audience and grow faster in the digital world.
+                Boost your brand visibility, increase leads, and turn visitors into loyal customers. </p>
+
+            <div class="flex justify-center md:justify-start space-x-4">
+                <a href="#"
+                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#081b29] transition"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#"
+                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#081b29] transition"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="#"
+                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#081b29] transition"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="#"
+                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#081b29] transition"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <div class="flex justify-center md:justify-start space-x-6 pt-4">
+                <!-- <button
+                    class="bg-[var(--primary)] text-[#081b29] px-8 py-3 rounded-full font-bold hover:shadow-[0_0_20px_#22d3ee] transition">Hire
+                    Me</button> -->
+                <a href="#contact"> <button
+                        class="border-2 border-[var(--primary)] text-[var(--primary)] px-8 py-3 rounded-full font-bold hover:bg-[var(--primary)] hover:text-[#081b29] transition">Contact
+                        Me
+            </div>
+        </div>
+    </section>
+
+    <div
+        class="max-w-7xl mx-auto px-10 py-10 flex flex-wrap justify-between items-center border-t border-gray-700 reveal-on-scroll">
+        <div class="flex items-center space-x-4 mb-4">
+            <span class="text-4xl font-bold">2+</span>
+            <span class="text-sm text-gray-400 uppercase">Years of Industry<br>experience</span>
+        </div>
+        <div class="flex items-center space-x-4 mb-4">
+            <span class="text-4xl font-bold">10+</span>
+            <span class="text-sm text-gray-400 uppercase">Successful Projects <br>completed</span>
+        </div>
+        <div class="flex items-center space-x-4 mb-4">
+            <span class="text-4xl font-bold">15+</span>
+            <span class="text-sm text-gray-400 uppercase">Leads <br>Generated</span>
+        </div>
+        <div class="flex items-center space-x-4 mb-4">
+            <span class="text-4xl font-bold">50+</span>
+            <span class="text-sm text-gray-400 uppercase">Satisfied Clients<br>Clients</span>
+        </div>
+    </div>
+    <section id="about" class="bg-[#081b29] text-white py-20 px-10 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+
+            <!-- LEFT CONTENT -->
+            <div class="md:w-1/2 space-y-6 order-2 md:order-1">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">Who
+                            We Are
+                        </h4>
+                        <div
+                            class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--primary)]">
+                        </div>
+                    </div>
+
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight mt-3">
+                        Empowering Businesses with
+                        <span
+                            class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
+                            Digital Innovation
+                        </span>
+                    </h2>
+                </div>
+                <!-- Description -->
+                <p class="text-gray-300 leading-relaxed max-w-2xl text-justify">
+                    We are a results-driven digital marketing team dedicated to helping local businesses
+                    grow smarter, faster, and stronger in the digital world.
+                    <br><br>
+                    Today, customers search for everything online — from “near me” services to shops and clinics.
+                    If your business is not visible on Google, you are losing valuable customers every day.
+                    <br><br>
+                    <span class="text-[var(--primary)] font-semibold">That’s where we help you grow.</span>
+                </p>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                    <div
+                        class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:border-[var(--primary)] hover:scale-105 transition duration-300 shadow-lg">
+                        ✔ Website Development <br>
+                        <span class="text-gray-400 text-sm">(Modern & Mobile-Friendly)</span>
+                    </div>
+
+                    <div
+                        class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:border-[var(--primary)] hover:scale-105 transition duration-300 shadow-lg">
+                        ✔ Google Business Optimization
+                    </div>
+
+                    <div
+                        class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:border-[var(--primary)] hover:scale-105 transition duration-300 shadow-lg">
+                        ✔ Local SEO <br>
+                        <span class="text-gray-400 text-sm">(Top Google Rankings)</span>
+                    </div>
+
+                    <div
+                        class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:border-[var(--primary)] hover:scale-105 transition duration-300 shadow-lg">
+                        ✔ Lead Generation Strategies
+                    </div>
+
+
+                </div>
+
+                <!-- Mission + Vision -->
+                <!-- <div class="space-y-4 mt-6"> -->
+                <!--                 
+                <div class="flex items-start space-x-4 bg-white/5 p-4 rounded-xl border border-white/10 hover:border-[var(--primary)] transition">
+                    <div class="bg-[var(--primary)]/10 p-3 rounded-lg">
+                        <i class="fas fa-bullseye text-[var(--primary)] text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold">Our Mission</h4>
+                        <p class="text-gray-400 text-sm">To provide high-quality web solutions and GMB optimization that deliver real results and growth.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 bg-white/5 p-4 rounded-xl border border-white/10 hover:border-[var(--secondary)] transition">
+                    <div class="bg-[var(--secondary)]/10 p-3 rounded-lg">
+                        <i class="fas fa-lightbulb text-[var(--secondary)] text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold">Creative Vision</h4>
+                        <p class="text-gray-400 text-sm">Combining modern coding practices with creative SEO strategies to keep you ahead of the competition.</p>
+                    </div>
+                </div>
+
+            </div> -->
+
+                <!-- Button -->
+                <!-- <div class="pt-6">
+                    <button
+                        class="relative px-8 py-3 rounded-full font-bold text-[var(--primary)] border border-[var(--primary)] overflow-hidden group">
+                        <span
+                            class="absolute inset-0 bg-[var(--primary)] translate-y-full group-hover:translate-y-0 transition duration-300"></span>
+                        <span class="relative group-hover:text-[#081b29]">Read More About Us</span>
+                    </button>
+                </div> -->
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="md:w-1/2 flex flex-col order-1 md:order-2 space-y-6">
+
+                <!-- TITLE -->
+
+                <!-- IMAGE -->
+                <div class="relative group">
+
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-700">
+                    </div>
+
+                    <div class="relative bg-[#0a253a] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                            alt="About Creozone"
+                            class="w-full h-[420px] object-cover opacity-90 group-hover:scale-110 transition duration-700">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/40 to-transparent">
+                        </div>
+
+                        <div
+                            class="absolute bottom-5 right-5 bg-black/60 border border-[var(--primary)] p-4 rounded-xl backdrop-blur-md shadow-lg">
+                            <h4 class="text-3xl font-bold text-[var(--primary)]">2+</h4>
+                            <p class="text-xs uppercase tracking-widest text-gray-300 font-bold">Years of Industry
+                                Experience</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex items-center space-x-4 mb-6">
+                <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">
+                    Our Services
+                </h4>
+                <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">
+                Solutions We
+                <span
+                    class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
+                    Provide
+                </span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div
+                    class="group bg-[#000000] p-10 rounded-2xl border border-gray-700 hover:border-[var(--primary)] transition duration-500 relative overflow-hidden">
+                    <div
+                        class="absolute -right-10 -top-10 w-40 h-40 bg-[var(--primary)]/10 rounded-full blur-3xl group-hover:bg-[var(--primary)]/20 transition duration-500">
+                    </div>
+
+                    <div class="text-[var(--primary)] text-5xl mb-6 flex justify-between items-center">
+                        <i class="fas fa-laptop-code"></i>
+                        <span
+                            class="text-gray-800 text-6xl font-bold opacity-10 group-hover:opacity-20 transition">01</span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">Website Design & <span
+                            class="text-[var(--primary)]">Development</span>
+                    </h3>
+
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-400 text-sm">
+                        <!-- <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> E-commerce -->
+                        <!-- Solutions</li> -->
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Custom Web Design
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> AI Integration
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> SEO Optimization
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Speed Optimization
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Maintenance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Domain &
+                            Hosting
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Mobile
+                            Responsiveness
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Dynamic &
+                            static
+                            websites
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="group bg-[#000000] p-10 rounded-2xl border border-gray-700 hover:border-[var(--secondary)] transition duration-500 relative overflow-hidden">
+                    <div
+                        class="absolute -right-10 -top-10 w-40 h-40 bg-[var(--secondary)]/10 rounded-full blur-3xl group-hover:bg-[var(--secondary)]/20 transition duration-500">
+                    </div>
+
+                    <div class="text-[var(--secondary)] text-5xl mb-6 flex justify-between items-center">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span
+                            class="text-gray-800 text-6xl font-bold opacity-10 group-hover:opacity-20 transition">02</span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-2">Local SEO <span class="text-[var(--secondary)]">(GMB)</span></h3>
+                    <p class="text-gray-400 text-sm mb-6 ">Google Business Profile Optimization Specialist</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-400 text-sm">
+                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> Profile
+                            Setup</div>
+                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> google
+                            profile
+                            Optimization</div>
+                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Photo/Video Management</div>
+                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> Number
+                            Activation</div>
+                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Suspended Recovery</div>
+                        <!-- <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Negative Review Mgmt</div> -->
+                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> Regular
+                            Posting</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="mt-16 bg-gradient-to-r from-cyan-900/20 to-pink-900/20 border border-gray-700 p-8 rounded-3xl text-center">
+                <h4 class="text-2xl font-bold mb-2">Ready to grow your business in Ahmedabad, Gandhinagar, Vadodara, Surat, Bhavnagar, Rajkot, junagath, Morabi</h4>
+                <p class="text-gray-400 mb-6">Let's take your business to the top of local search results!</p>
+                <a href="https://wa.me/919081908478?text=Hi,%20I%20am%20interested%20in%20your%20services"
+                    target="_blank"
+                    class="inline-block bg-[var(--primary)] text-[#081b29] px-10 py-3 rounded-full font-bold hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] transition">Get
+                    Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="flex items-center space-x-4 mb-6">
+                <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">My Portfolio
+                </h4>
+                <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <h2 class="text-4xl md:text-5xl font-bold">
+                    Creative
+                    <span
+                        class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
+                        Work by Our Team
+                    </span>
+                </h2>
+
+                <div class="flex space-x-4 text-sm font-medium">
+                    <button class="text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1">All</button>
+                    <button class="text-gray-400 hover:text-[var(--primary)] transition">Website</button>
+                    <!-- <button class="text-gray-400 hover:text-[var(--primary)] transition">SEO/GMB</button> -->
+                </div>
+            </div>
+
+            <!-- CARDS -->
+            <!-- <div class="grid md:grid-cols-3 gap-8">
+
+                < CARD 1 -->
+            <!-- <div onclick="openModal(this)" 
+    data-title="Modern dental website"
+    data-desc="Custom artwork selling platform with integrated payment gateway and admin panel."
+    data-img="dental.png"
+    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500"> -->
+
+            <!-- Image -->
+            <!-- <div class="h-64 flex items-center justify-center bg-[#0a253a] overflow-hidden">
+        <img src="dental.png"
+            class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500 opacity-80">
+    </div> -->
+
+            <!-- Content -->
+            <!-- <div class="p-6">
+        <span class="text-xs text-[var(--primary)] uppercase font-bold">
+            E-commerce • Laravel
+        </span>
+        <h3 class="text-xl font-bold mt-2">
+            Modern dental website
+        </h3>
+        <p class="text-gray-400 text-sm mt-3">
+            Custom artwork selling platform.
+        </p>
+    </div> -->
+            <!-- </div> -->
+            <!-- CARD 2 -->
+            <!-- <div onclick="openModal(this)" data-title="Local SEO Dominance"
+                    data-desc="Optimized 10+ local businesses to rank #1 on Google Maps." data-img="pro2 (1).png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--secondary)] transition duration-500">
+
+                    <div class="h-64 overflow-hidden">
+                        <img src="website.png"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                    </div>
+
+                    <div class="p-6">
+                        <span class="text-xs text-[var(--secondary)] uppercase font-bold">SEO • Google Business</span>
+                        <h3 class="text-xl font-bold mt-2">Local SEO Dominance</h3>
+                        <p class="text-gray-400 text-sm mt-3">Optimized local businesses.</p>
+                    </div>
+                </div> -->
+
+            <!-- CARD 3 -->
+            <!-- <div onclick="openModal(this)" data-title="Admin Inventory Suite"
+                    data-desc="Secure API based inventory management system." data-img="slon.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500">
+
+                    <div class="h-64 overflow-hidden">
+                        <img src="slon.png"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                    </div>
+
+                    <div class="p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold">Web App • PHP</span>
+                        <h3 class="text-xl font-bold mt-2">Admin Inventory Suite</h3>
+                        <p class="text-gray-400 text-sm mt-3">Inventory management system.</p>
+                    </div>
+                </div>
+                <div onclick="openModal(this)" data-title="Admin Inventory Suite"
+                    data-desc="Secure API based inventory management system." data-img="admin.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500">
+
+                    <div class="h-64 overflow-hidden">
+                        <img src="admin.png"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                    </div>
+
+                    <div class="p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold">Web App • PHP</span>
+                        <h3 class="text-xl font-bold mt-2">Admin Inventory Suite</h3>
+                        <p class="text-gray-400 text-sm mt-3">Inventory management system.</p>
+                    </div>
+                </div>
+                <div onclick="openModal(this)" data-title="Admin Inventory Suite"
+                    data-desc="Secure API based inventory management system." data-img="food.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500">
+
+                    <div class="h-64 overflow-hidden">
+                        <img src="food.png"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                    </div>
+
+                    <div class="p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold">Web App • PHP</span>
+                        <h3 class="text-xl font-bold mt-2">Admin Inventory Suite</h3>
+                        <p class="text-gray-400 text-sm mt-3">Inventory management system.</p>
+                    </div>
+                </div>
+                <div onclick="openModal(this)" data-title="Admin Inventory Suite"
+                    data-desc="Secure API based inventory management system." data-img="pg.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500">
+
+                    <div class="h-64 overflow-hidden">
+                        <img src="pg.png"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                    </div>
+
+                    <div class="p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold">Web App • PHP</span>
+                        <h3 class="text-xl font-bold mt-2">Admin Inventory Suite</h3>
+                        <p class="text-gray-400 text-sm mt-3">Inventory management system.</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- BUTTON -->
+            <!-- <div class="mt-16 text-center">
+                <button
+                    class="bg-transparent border-2 border-[var(--secondary)] text-[var(--secondary)] px-10 py-3 rounded-full font-bold hover:bg-[var(--secondary)] hover:text-white transition">
+                    View All Projects
+                </button>
+            </div> -->
+
+            <!-- </div>  -->
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Big Image -->
+                <div class="md:row-span-2 relative group overflow-hidden rounded-[2rem] border border-white/5 cursor-pointer"
+                    onclick="openPopup('pro1.png', 'Modern GYM Website')">
+                    <img src="pro1.png"
+                        class="w-full h-full object-cover  group-hover:grayscale-0 transition-all duration-700">
+                    <div
+                        class="absolute bottom-5 left-5 text-black text-sm font-semibold bg-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition duration-500">
+                        Modern GYM Website
+                    </div>
+                </div>
+
+                <!-- Admin -->
+                <div class="relative group overflow-hidden rounded-[2rem] border border-white/5 cursor-pointer h-64"
+                    onclick="openPopup('admin.png', 'Professional Admin Panel')">
+                    <img src="admin.png" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-4 left-4 text-black text-sm font-semibold bg-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+                        Professional Admin Panel
+                    </div>
+                </div>
+
+                <!-- Dental -->
+                <div class="relative group overflow-hidden rounded-[2rem] border border-white/5 cursor-pointer h-64"
+                    onclick="openPopup('dental1.png', 'Premium Dental Website')">
+                    <img src="dental1.png" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-4 left-4 text-black text-sm font-semibold bg-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+                        Premium Dental Website
+                    </div>
+                </div>
+
+                <!-- Food -->
+                <div class="relative group overflow-hidden rounded-[2rem] border border-white/5 cursor-pointer h-64"
+                    onclick="openPopup('food.png', 'High-End Food & Restaurant Website')">
+                    <img src="food.png" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-4 left-4 text-black text-sm font-semibold bg-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+                        High-End Food & Restaurant Website
+                    </div>
+                </div>
+
+                <!-- Salon -->
+                <div class="relative group overflow-hidden rounded-[2rem] border border-white/5 cursor-pointer h-64"
+                    onclick="openPopup('slon.png', 'Luxury Salon Website')">
+                    <img src="slon.png" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-4 left-4 text-black text-sm font-semibold bg-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+                        Luxury Salon Website
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Popup Overlay -->
+            <div id="popup"
+                class="fixed inset-0 bg-black/50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+                <div class="bg-white rounded-2xl p-6 max-w-lg w-full relative">
+                    <button id="closePopup"
+                        class="absolute top-3 right-3 text-gray-500 hover:text-gray-900 font-bold text-xl">✕</button>
+                    <img id="popupImage" src="" class="w-full h-auto rounded-lg mb-4">
+                    <h2 id="popupTitle" class="text-lg font-semibold text-black text-center"></h2>
+                </div>
+            </div>
+
+            <!-- JS -->
+            <script>
+                function openPopup(imageSrc, title) {
+                    const popup = document.getElementById('popup');
+                    const popupImage = document.getElementById('popupImage');
+                    const popupTitle = document.getElementById('popupTitle');
+
+                    popupImage.src = imageSrc;
+                    popupTitle.textContent = title;
+
+                    popup.classList.remove('opacity-0', 'pointer-events-none');
+                    popup.classList.add('opacity-100', 'pointer-events-auto');
+                }
+
+                document.getElementById('closePopup').addEventListener('click', () => {
+                    const popup = document.getElementById('popup');
+                    popup.classList.add('opacity-0', 'pointer-events-none');
+                    popup.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+
+                // Click outside to close
+                document.getElementById('popup').addEventListener('click', (e) => {
+                    if (e.target.id === 'popup') {
+                        e.target.classList.add('opacity-0', 'pointer-events-none');
+                        e.target.classList.remove('opacity-100', 'pointer-events-auto');
+                    }
+                });
+            </script>
+
+
+        </div>
+    </section>
+
+
+
+    <section id="portfolio" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex items-center space-x-4 mb-6">
+                <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">My Portfolio
+                </h4>
+                <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <h2 class="text-4xl md:text-5xl font-bold">
+                    Latest
+                    <span
+                        class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
+                        Google SEO Projects
+                    </span>
+                </h2>
+
+                <div class="flex space-x-4 text-sm font-medium">
+                    <button class="text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1">All</button>
+                    <button class="text-gray-400 hover:text-[var(--primary)] transition">SEO/GMB</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div onclick="openModal(this)" data-title="Google SEO for Visa & Immigration Services"
+                    data-desc="Get more clients and rank your consultancy on top of Google with powerful local SEO strategies."
+                    data-img="agency.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500 h-80">
+
+                    <img src="agency.png"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold">
+                            • Visa / Immigration
+                        </span>
+
+                        <!-- Title -->
+                        <h3 class="text-xl font-bold mt-1 text-white">
+                            Google SEO for Visa & Immigration Services
+                        </h3>
+
+                        <!-- Description -->
+                        <p class="text-gray-300 text-sm mt-2 line-clamp-2">
+                        Get more clients and rank your consultancy on top of Google with powerful local SEO strategies.                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal(this)" data-title="Salon & Spa Google SEO Services" data-desc="Increase bookings and attract local customers with high-ranking SEO and Google profile optimization." data-img="spa.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--secondary)] transition duration-500 h-80">
+
+                    <img src="spa.png"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                        <span class="text-xs text-[var(--secondary)] uppercase font-bold">Salon & Spa</span>
+                        <h3 class="text-xl font-bold mt-1 text-white">Salon & Spa Google SEO Services</h3>
+                        <p class="text-gray-300 text-sm mt-2"> Increase bookings and attract local customers with high-ranking SEO and Google profile optimization.</p>
+                    </div>
+                </div>
+
+                <div onclick="openModal(this)" data-title=" Education Industry Google SEO Services" data-desc="Boost admissions and visibility with targeted SEO and Google Business optimization." data-img="school.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500 h-80">
+
+                    <img src="school.png"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold"> Education / Classes
+                        </span>
+                        <h3 class="text-xl font-bold mt-1 text-white"> Education Industry Google SEO Services
+                        </h3>
+                        <p class="text-gray-300 text-sm mt-2">Boost admissions and visibility with targeted SEO and Google Business optimization.
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal(this)" data-title="Dental & Medical Healthcare Services"
+                    data-desc=" Professional healthcare services including dentist, hospital care, physiotherapy, dermatology, and clinic treatments."
+                    data-img="health.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500 h-80">
+
+                    <img src="health.png"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold"> Health & Doctor
+
+                        </span>
+                        <h3 class="text-xl font-bold mt-1 text-white"> Healthcare & Doctor SEO Services
+
+                        </h3>
+                        <p class="text-gray-300 text-sm mt-2"> 
+Get more patients and rank your clinic higher on Google with proven SEO strategies.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal(this)" data-title="Travel & Tourism Google SEO Services"
+                    data-desc="Increase bookings and rank your services on top of Google search results."
+                    data-img="travel.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500 h-80">
+
+                    <img src="travel.png"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold"> Travel / Taxi / Tourism
+                        </span>
+                        <h3 class="text-xl font-bold mt-1 text-white"> Travel & Tourism Google SEO Services
+
+                        </h3>
+                        <p class="text-gray-300 text-sm mt-2"> Increase bookings and rank your services on top of Google search results.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal(this)" data-title="Gaming Zone & Event Google SEO Services"
+                    data-desc="Increase bookings, attract more customers, and rank your gaming zone, club, or event services on top of Google with powerful local SEO strategies."
+                    data-img="event.png"
+                    class="cursor-pointer group relative bg-[#0a253a] rounded-2xl overflow-hidden border border-gray-700 hover:border-[var(--primary)] transition duration-500 h-80">
+
+                    <img src="event.png"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold"> Gaming / Event Industry
+
+                        </span>
+                        <h3 class="text-xl font-bold mt-1 text-white"> Gaming Zone & Event Google SEO Services
+
+
+                        </h3>
+                        <p class="text-gray-300 text-sm mt-2"> Increase bookings, attract more customers, and rank your gaming zone, club, or event services on top of Google with powerful local SEO strategies.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="projectModal"
+        class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[100] p-4 backdrop-blur-sm">
+
+        <div class="bg-[#0a253a] w-full max-w-3xl rounded-2xl border border-gray-700 relative overflow-hidden">
+
+            <!-- Close Button -->
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-white bg-black/50 hover:bg-black w-10 h-10 rounded-full z-10 transition">✕</button>
+
+            <!-- Image FULL SHOW -->
+            <div class="w-full h-[300px] md:h-[400px] bg-black flex items-center justify-center">
+                <img id="modalImg" class="max-w-full max-h-full object-contain">
+            </div>
+
+            <!-- Content -->
+            <div class="p-8">
+                <h2 id="modalTitle" class="text-3xl font-bold text-white mb-4"></h2>
+                <p id="modalDesc" class="text-gray-300 leading-relaxed"></p>
+            </div>
+
+        </div>
+    </div>
+    <script id="modaljs01">
+        function openModal(el) {
+            const modal = document.getElementById('projectModal');
+            const img = document.getElementById('modalImg');
+            const title = document.getElementById('modalTitle');
+            const desc = document.getElementById('modalDesc');
+
+            // Get data
+            img.src = el.getAttribute('data-img');
+            title.innerText = el.getAttribute('data-title');
+            desc.innerText = el.getAttribute('data-desc');
+
+            // Show modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close on outside click
+        document.getElementById('projectModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+
+    <section id="success" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-left mb-16">
+                <div class="flex items-center space-x-4 mb-6">
+                    <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">Success
+                        Roadmap
+                    </h4>
+                    <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold">Our Business <span
+                        class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">Growth
+                        Process</span></h2>
+
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -translate-y-1/2 z-0">
+                </div>
+
+<div class="relative z-10 group will-change-transform">
+                    <div
+                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[var(--primary)] p-8 rounded-2xl group-hover:border-[var(--primary)] group-hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] group-hover:-translate-y-4 group-hover:rotate-1 group-hover:skew-x-1 transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-2xl">
+                        <div
+                            class="w-16 h-16 bg-[var(--primary)] text-[#081b29] rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.8)] transition-all duration-500">
+                            01</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Discovery</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">We understand your business goals and target audience.</p>
+                    </div>
+                </div>
+
+<div class="relative z-10 group will-change-transform">
+                    <div
+                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[#8B5CF6] p-8 rounded-2xl group-hover:border-[#8B5CF6] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] group-hover:-translate-y-4 group-hover:rotate-[-1deg] group-hover:skew-x-[-1deg] transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-2xl">
+                        <div
+                            class="w-16 h-16 bg-[#8B5CF6] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(139,92,246,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.8)] transition-all duration-500">
+                            02</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Strategy</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">We create a custom SEO and design strategy that delivers measurable results.</p>
+                    </div>
+                </div>
+
+<div class="relative z-10 group will-change-transform">
+                    <div
+                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[var(--primary)] p-8 rounded-2xl group-hover:border-[var(--primary)] group-hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] group-hover:-translate-y-4 group-hover:rotate-1 group-hover:skew-x-1 transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-2xl">
+                        <div
+                            class="w-16 h-16 bg-[var(--primary)] text-[#081b29] rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.8)] transition-all duration-500">
+                            03</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Execution</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">Development and optimization begin using modern tools and technologies.</p>
+                    </div>
+                </div>
+
+<div class="relative z-10 group will-change-transform">
+                    <div
+                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[#8B5CF6] p-8 rounded-2xl group-hover:border-[#8B5CF6] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] group-hover:-translate-y-4 group-hover:rotate-[-1deg] group-hover:skew-x-[-1deg] transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-2xl">
+                        <div
+                            class="w-16 h-16 bg-[#8B5CF6] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(139,92,246,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.8)] transition-all duration-500">
+                            04</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Growth</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">After launch, we continuously track performance and generate leads.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="smart" class="bg-[#06141f] py-16 md:py-20 px-4 sm:px-6 md:px-10 reveal-on-scroll relative bg-[#06141f]">
+        <!-- Animated Dots Background -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+
+            <!-- Small Dots Grid -->
+            <div class="absolute inset-0 opacity-20 
+        bg-[radial-gradient(circle,_rgba(34,211,238,0.4)_1px,_transparent_1px)] 
+        [background-size:30px_30px] animate-[moveDots_20s_linear_infinite]">
+            </div>
+
+            <!-- Glow Dots -->
+            <div class="absolute top-10 right-1/3 w-3 h-3 bg-[var(--primary)] rounded-full blur-sm animate-ping"></div>
+            <div class="absolute bottom-10 right-1/4 w-3 h-3 bg-[var(--secondary)] rounded-full blur-sm animate-ping delay-700">
+            </div>
+            <div class="absolute top-60 left-1/3 w-3 h-3 bg-[var(--primary)] rounded-full blur-sm animate-ping"></div>
+            <div class="absolute bottom-40 left-1/4 w-3 h-3 bg-[var(--secondary)] rounded-full blur-sm animate-ping delay-700">
+            </div>
+
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-16">
+
+            <div class="lg:w-1/2">
+
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 md:mb-6">
+                    <h4 class="text-[var(--secondary)] font-semibold tracking-widest uppercase text-sm sm:text-base">
+                        Why Smart Promotion?
+                    </h4>
+                    <div class="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight">
+                    We Don't Just Build Websites, <br>
+                    <span class="text-[var(--primary)]">We Build Digital Assets.</span>
+                </h2>
+
+                <p class="text-gray-400 mb-6 md:mb-8 text-sm sm:text-base">
+                    To stand out in the competitive markets of Ahmedabad, Vadodara, Surat, Rajkot, Bhavnagar, Morbi,
+                    Junagadh, and Gandhinagar, you need more than just a website — you need a customer-converting
+                    machine. </p>
+
+                <div class="space-y-3 md:space-y-4">
+
+                    <div class="flex items-center gap-3 sm:gap-4 bg-[#0a253a]/50 p-3 sm:p-4 rounded-lg border-l-4 border-[var(--primary)] 
+                hover:bg-[#0a253a] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] 
+                transition-all duration-300 cursor-pointer group">
+                        <i class="fas fa-rocket text-[var(--primary)] group-hover:scale-125 transition-transform"></i>
+                        <span class="font-semibold text-sm sm:text-base">Fast Loading Speed (90+ PageSpeed Score)</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 sm:gap-4 bg-[#0a253a]/50 p-3 sm:p-4 rounded-lg border-l-4 border-[var(--secondary)] 
+                hover:bg-[#0a253a] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(219,39,119,0.2)] 
+                transition-all duration-300 cursor-pointer group">
+                        <i class="fas fa-mobile-alt text-[var(--secondary)] group-hover:scale-125 transition-transform"></i>
+                        <span class="font-semibold text-sm sm:text-base">100% Responsive for All Mobile Devices</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 sm:gap-4 bg-[#0a253a]/50 p-3 sm:p-4 rounded-lg border-l-4 border-[var(--primary)] 
+                hover:bg-[#0a253a] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] 
+                transition-all duration-300 cursor-pointer group">
+                        <i
+                            class="fas fa-search-location text-[var(--primary)] group-hover:scale-125 transition-transform"></i>
+                        <span class="font-semibold text-sm sm:text-base">High Ranking on Local Search Results</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 relative p-4 sm:p-6 md:p-10 overflow-hidden rounded-3xl group">
+
+                <img src="ChatGPT Image Apr 1, 2026, 03_05_44 PM.png" alt="Tech Background"
+                    class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-30 group-hover:scale-110 transition-transform duration-700 ease-in-out z-0">
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-[#081b29]/90 via-[#0a253a]/70 to-[#081b29]/90 rounded-3xl z-1">
+                </div>
+
+                <div
+                    class="absolute -top-16 -left-16 w-60 sm:w-80 h-60 sm:h-80 bg-[var(--primary)]/10 rounded-full blur-[100px] z-2 animate-pulse">
+                </div>
+                <div
+                    class="absolute -bottom-16 -right-16 w-60 sm:w-80 h-60 sm:h-80 bg-[var(--secondary)]/10 rounded-full blur-[100px] z-2 animate-pulse delay-700">
+                </div>
+
+                <div class="relative grid grid-cols-2 gap-3 sm:gap-6 z-10">
+
+                    <div
+                        class="bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10 text-center hover:-translate-y-2 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-[var(--primary)]/50">
+                        <i class="fas fa-shield-alt text-3xl sm:text-5xl text-[var(--primary)] mb-3 sm:mb-4"></i>
+                        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">100%</h3>
+                        <p class="text-gray-400 text-[10px] sm:text-xs uppercase mt-1">Secure Code</p>
+                    </div>
+
+                    <div
+                        class="bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10 text-center mt-6 sm:mt-10 hover:-translate-y-2 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-[var(--secondary)]/50">
+                        <i class="fas fa-headset text-3xl sm:text-5xl text-[var(--secondary)] mb-3 sm:mb-4"></i>
+                        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">24/7</h3>
+                        <p class="text-gray-400 text-[10px] sm:text-xs uppercase mt-1">Support</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="trust" class="bg-[#081b29] py-28 px-6 md:px-10 relative overflow-hidden">
+
+        <div
+            class="absolute -top-10 -left-10 text-[15rem] font-black text-white/[0.02] select-none pointer-events-none">
+            TRUST
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+
+            <div class="lg:w-2/5 text-left">
+                <h4 class="text-[var(--primary)] font-bold uppercase tracking-[0.4em] text-xs mb-4">Voice of Success
+                </h4>
+                <h2 class="text-5xl md:text-7xl font-black text-white leading-tight">
+                    THEY <br> <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)]">BELIEVED</span>
+                    <br> IN US.
+                </h2>
+                <p class="text-gray-500 mt-8 text-lg max-w-sm">
+                    Our work goes beyond just writing code — we transform your vision into a powerful brand. </p>
+
+                <div class="mt-10 flex items-center gap-4">
+                    <div class="flex -space-x-3">
+                        <div
+                            class="w-12 h-12 rounded-full border-2 border-[#081b29] bg-cyan-500 flex items-center justify-center font-bold">
+                            A</div>
+                        <div
+                            class="w-12 h-12 rounded-full border-2 border-[#081b29] bg-[var(--secondary)] flex items-center justify-center font-bold">
+                            S</div>
+                        <div
+                            class="w-12 h-12 rounded-full border-2 border-[#081b29] bg-purple-500 flex items-center justify-center font-bold">
+                            V</div>
+                    </div>
+                    <p class="text-sm text-gray-400"><span class="text-white font-bold">15+</span> Happy Clients</p>
+                </div>
+            </div>
+
+            <div class="lg:w-3/5 relative flex flex-col gap-6 w-full">
+
+                <div
+                    class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] transform hover:-translate-y-2 transition-all duration-500 hover:border-[var(--primary)]/50 shadow-2xl relative ml-0 md:ml-12 group">
+                    <div
+                        class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-12 bg-[var(--primary)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6 ">
+                        "Smart Business Promotion team ne meri Google My Business listing ko bahut achhe se optimize kiya. Pehle meri profile pe visibility kam thi, lekin ab top 5 mai  show ho rahi hai. Local SEO strategy aur keyword targeting perfect hai. Sabse best part hai ki ab daily genuine inquiries aa rahi hai. mai to honestly sabko recommended karunga. muje yah one of the best agency  gujarat lagi hai...."
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-blue-600">
+                            </div>
+                            <div>
+                                <h4 class="text-white font-black tracking-wide">ARJUN PARMAR</h4>
+                                <p class="text-[var(--primary)] text-xs font-bold uppercase">Owner, Green Apple Studio
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-3xl text-white/10 font-serif">“</div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[#0a253a] border border-gray-800 p-8 rounded-[2.5rem] transform hover:-translate-y-2 transition-all duration-500 hover:border-[var(--secondary)] shadow-2xl relative md:mr-12 group">
+                    <div
+                        class="absolute -right-4 top-1/2 -translate-y-1/2 w-1 h-12 bg-[var(--secondary)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6 ">
+                        "Creative designs and well-planned social media handling. My brand visibility and engagement improved a lot. Great work! Thank you social media team of DR Smart Business Promotion".....Thank again..."
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--secondary)] to-purple-600"></div>
+                            <div>
+                                <h4 class="text-white font-black tracking-wide">SNEHAL MEHTA</h4>
+                                <p class="text-[var(--secondary)] text-xs font-bold uppercase">CEO, Elevate Marketing</p>
+                            </div>
+                        </div>
+                        <div class="text-3xl text-white/10 font-serif">“</div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/5 p-8 rounded-[2.5rem] transform hover:-translate-y-2 transition-all duration-500 hover:border-white/20 shadow-2xl ml-0 md:ml-24">
+                    <p class="text-gray-400 text-base mb-6">
+                       "DR smart business promotion team ne meri website design aur develop ki hai aur mai honestly batau to performance outstanding hai... Website bahut fast load hoti hai aur user-friendly hai. Mobile aur SEO dono ke liye optimized hai.  sath hi Backend bhi secure aur easy to manageble hai. Agar aapko professional aur high-speed website chahiye, toh ye team best choice rahegi apke liye" mai to apko pakaa sajest karna chahungi."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xs">
+                            VP</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">VIVEK PATEL</h4>
+                            <p class="text-gray-500 text-[10px] uppercase">Founder, Creative Agency</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex items-center space-x-4 mb-6">
+                <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">Contact Me
+                </h4>
+                <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">
+                Let's Work
+                <span
+                    class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
+                    Together</span>
+            </h2>
+
+            <div class="flex flex-col lg:flex-row gap-16">
+
+                <div class="lg:w-1/3 space-y-10">
+                    <div class="space-y-6">
+                        <p class="text-gray-300 leading-relaxed text-justify">
+                            Let’s work together to turn your ideas into powerful digital experiences that drive real
+                            results.
+                            From design to development and marketing, I help your business grow faster and smarter
+                            online. </p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-6 group">
+                            <div
+                                class="w-14 h-14 bg-[#0a253a] border border-[var(--primary)] rounded-2xl flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-[#081b29] transition duration-300 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400 text-sm uppercase tracking-wider">Call Us</h4>
+                                <a href="https://wa.me/919081908478?text=Hi,%20I%20am%20interested%20in%20your%20services"
+                                    target="_blank">
+                                    <p class="text-lg font-bold">+91 9081908478</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-6 group">
+                            <div
+                                class="w-14 h-14 bg-[#0a253a] border border-[var(--secondary)] rounded-2xl flex items-center justify-center text-[var(--secondary)] group-hover:bg-[var(--secondary)] group-hover:text-white transition duration-300 shadow-[0_0_15px_rgba(219,39,119,0.1)]">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400 text-sm uppercase tracking-wider">Email Us</h4>
+                                <a href="mailto:drsmartbusinesspromotion@gmail.com">
+                                    <p class="text-lg font-bold">drsmartbusinesspromotion@gmail.com</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-6 group">
+                            <div
+                                class="w-14 h-14 bg-[#0a253a] border border-[var(--primary)] rounded-2xl flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-[#081b29] transition duration-300 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400 text-sm uppercase tracking-wider">Location</h4>
+                                <p class="text-lg font-bold">Ahmedabad, Gujarat, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="lg:w-2/3">
+                                <!-- <form name="contact" method="POST" data-netlify="true" action="/thankyou.html"
+                        class="bg-[#0a253a] p-8 md:p-12 rounded-3xl border border-gray-700 shadow-2xl">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="space-y-2">
+                                <label class="text-sm text-gray-400 ml-1">Full Name</label>
+                                <input type="text" name="name" placeholder="John Doe" required
+                                    class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm text-gray-400 ml-1">Email Address</label>
+                                <input type="email" name="email" placeholder="example@mail.com" required
+                                    class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
+                            </div>
+
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm text-gray-400 ml-1">Contact Number</label>
+                            <input type="text" name="phone" placeholder="123-456-7890" required
+                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
+                        </div>
+
+                        <div class="space-y-2 mb-6">
+                            <label class="text-sm text-gray-400 ml-1">Service Required</label>
+                            <select name="service" required
+                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300 appearance-none text-gray-400">
+                                <option value="">Select a service</option>
+                                <option>Website Development</option>
+                                <option>Google Business Profile (SEO)</option>
+                                <option>Website Maintenance</option>
+                                <option>SEO Optimization</option>
+                                <option>Custom Website</option>
+                                <option>Other Web Services</option>
+                                <option>General Inquiry</option>
+                                <option>Request a Quote</option>
+                                <option>Other Query</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2 mb-8">
+                            <label class="text-sm text-gray-400 ml-1">Your Message</label>
+                            <textarea rows="5" name="message" placeholder="How can we help you?" required
+                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full md:w-max bg-[var(--secondary)] hover:bg-pink-700 text-white px-12 py-4 rounded-full font-bold transition duration-300 shadow-[0_5_20px_rgba(219,39,119,0.3)] flex items-center justify-center space-x-3">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form> -->
+                      <img src="contact.jpg" alt="Contact Background"
+                    class="w-full h-full object-cover rounded-3xl opacity-30">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="bg-[#06141f] border-t border-gray-800 pt-16 pb-8 px-6 font-[Poppins]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+
+            <!-- Logo + About -->
+            <div>
+             <img src="menulogo.png" alt="Logo" class="w-32 mb-4">
+                <h3 class="text-lg font-semibold mb-4 text-white">DR Smart Business Promotion</h3>  
+                <p class="text-gray-400 text-sm text-justify">
+                    Crafting modern digital experiences that help your brand stand out and grow online.
+                    Let’s build something impactful together and turn your ideas into real success. </p>
+
+                <!-- Social -->
+                <div class="flex space-x-4 mt-4">
+                    <a
+                        class="w-10 h-10 border border-[var(--primary)] text-[var(--primary)] flex items-center justify-center rounded-full hover:bg-[var(--primary)] hover:text-[#081b29]">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a
+                        class="w-10 h-10 border border-[var(--primary)] text-[var(--primary)] flex items-center justify-center rounded-full hover:bg-[var(--primary)] hover:text-[#081b29]">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a
+                        class="w-10 h-10 border border-[var(--primary)] text-[var(--primary)] flex items-center justify-center rounded-full hover:bg-[var(--primary)] hover:text-[#081b29]">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-[var(--primary)]">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li>
+                        <a href="#"
+                            class="relative hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="relative hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services"
+                            class="relative hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#portfolio"
+                            class="relative hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                            Portfolio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-[var(--primary)]">Services</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li>Web Development</li>
+                    <li>SEO Optimization</li>
+                    <li>Google Ads</li>
+                    <!-- <li>UI/UX Design</li> -->
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-[var(--primary)]">Newsletter</h3>
+                <p class="text-gray-400 text-sm mb-4">Subscribe for updates</p>
+
+                <div class="flex">
+                    <input type="email" placeholder="Email"
+                        class="w-full px-3 py-2 rounded-l-lg bg-[#0a253a] border border-gray-700 focus:outline-none focus:border-[var(--primary)] text-sm">
+
+                    <button class="bg-[var(--secondary)] px-4 rounded-r-lg hover:opacity-90">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="mt-10 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+            © 2026 DR Smart Business Promotion. All Rights Reserved.
+        </div>
+
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typing-text', {
+            strings: ['Web Developer', 'SEO Specialist', 'GMB Optimization Expert', 'Custom Designer'],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+
+        // --- SCROLL REVEAL SCRIPT ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+    <script>
+        const outline = document.getElementById("cursor-outline");
+        const innerDot = document.getElementById("cursor-inner-dot");
+
+        // Mouse Movement Tracking
+        window.addEventListener("mousemove", (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Middle Dot (Fast follow)
+            if (innerDot) {
+                innerDot.style.left = `${posX}px`;
+                innerDot.style.top = `${posY}px`;
+            }
+
+            // Outer Ring (Smooth delay effect)
+            if (outline) {
+                outline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, {
+                    duration: 500,
+                    fill: "forwards"
+                });
+            }
+        });
+
+        // Hover Effect for Links & Buttons
+        const allLinks = document.querySelectorAll('a, button, .cursor-pointer, input, select');
+
+        allLinks.forEach(link => {
+            link.addEventListener("mouseenter", () => {
+                document.body.classList.add("cursor-hover-active");
+            });
+            link.addEventListener("mouseleave", () => {
+                document.body.classList.remove("cursor-hover-active");
+            });
+        });
+
+        // Mobile Menu Functions
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (menuBtn) {
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.remove("hidden");
+            });
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add("hidden");
+        }
+    </script>
+    <!-- Static WhatsApp Floating Button -->
+    <a href="https://wa.me/919081908478?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank"
+        class="fixed bottom-6 left-6 z-50 w-14 h-14 border border-[var(--primary)] text-[var(--primary)] flex items-center justify-center rounded-full hover:bg-[var(--primary)] hover:text-[#081b29]">
+        <span
+            class="absolute inset-0 rounded-full bg-[var(--primary)] opacity-20 animate-ping group-hover:bg-[var(--secondary)]"></span>
+
+        <i class="fab fa-whatsapp transition-transform duration-500 group-hover:scale-125 bg"></i>
+        <div
+            class="absolute inset-0 rounded-full bg-[var(--secondary)]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+        </div>
+
+    </a>
+    <a href="#" class="fixed bottom-6 right-6 z-[100] group">
+
+        <div
+            class="relative w-14 h-14 bg-[#0a253a] border-2 border-[var(--primary)] text-[var(--primary)] rounded-full flex items-center justify-center text-xl shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-500 group-hover:border-[var(--secondary)] group-hover:text-[var(--secondary)] group-hover:-translate-y-2">
+
+            <i class="fas fa-chevron-up transition-transform duration-500 group-hover:scale-125"></i>
+
+            <div
+                class="absolute inset-0 rounded-full bg-[var(--secondary)]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+            </div>
+        </div>
+    </a>
+
+</body>
+
+</html>
