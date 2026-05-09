@@ -54,26 +54,27 @@
             box-shadow: 0 0 50px rgba(106, 1, 106, 0.5);
         }
 
+
   
         :root {
             /* Core Colors - Updated with your specific Gold & Purple */
-            --primary: #f8cf41;         /* Aapka Gold color */
-            --secondary: #6A016A;       /* Aapka Vibrant Purple */
+            --primary:  #ff9c13;         /* Aapka Gold color */
+            --secondary: #6a0d45;       /* Aapka Vibrant Purple */
 
             /* Accent Colors - Using your 4 requested shades */
-            --gold-400: #e6c796;        /* Light Gold for hover */
-            --gold-500: #d3aa6a;        /* Aapka Main Gold */
+            --gold-400: #ff9c13;        /* Light Gold for hover */
+            --gold-500: #ff9c13;        /* Aapka Main Gold */
             
-            --cyan-400: #6A016A;        /* Aapka Purple 1 */
-            --cyan-500: #5A005A;        /* Aapka Purple 2 */
+            --cyan-400: #6a0d45;        /* Aapka Purple 1 */
+            --cyan-500: #6a0d45;        /* Aapka Purple 2 */
             
-            --pink-500: #4B014B;        /* Aapka Deep Purple */
+            --pink-500: #6a0d45;        /* Aapka Deep Purple */
             --pink-600: #310031;        /* Darker shade for contrast */
 
             /* Grays & Neutrals - Deep Purple based darks (Better than Black) */
             --gray-700: #374151;
             --gray-400: #9CA3AF;
-            --bg-dark: #0d000d;         /* Extreme Dark Purple base */
+                 
             --bg-darker: #1a001a;       /* Dark Purple section background */
 
             /* Text & Shadows - Updated to match your Gold */
@@ -82,16 +83,29 @@
             --shadow-gold: 0 0 25px rgba(211, 170, 106, 0.6);
             body {
     background-color: var(--bg-dark);
-    background-image: radial-gradient(circle at top right, #4B014B, transparent 40%),
-                      radial-gradient(circle at bottom left, #120112, transparent 40%);
+    background-image: white;
         }
-        #about,#services,#portfolio,#contact,#success,#smart,#trust,#footer {
-    background: linear-gradient(to bottom, var(--bg-dark), var(--bg-darker));
-    position: relative;
+  #about,
+#services,
+#portfolio,
+#contact,
+#success,
+#smart,
+#trust {
+background: linear-gradient(to bottom right, #ffffff, #f3f4f6, #ffe4ec);    position: relative;
     overflow: hidden;
 }
-    }
-    
+        }
+    #about,
+#services,
+#portfolio,
+#contact,
+#success,
+#smart,
+#trust {
+    border-top: none !important;
+    border-bottom: none !important;
+}
 
         /* --- SCROLL AUTOMATION CSS --- */
         .reveal-on-scroll {
@@ -262,6 +276,7 @@
             /* Aapki theme ka Purple color */
             border-width: 2px;
         }
+        
 
         .cursor-hover-active #cursor-inner-dot {
             background-color: #db2777;
@@ -281,56 +296,78 @@
     </style>
 </head>
 
-<body class="bg-[#081b29] text-white overflow-x-hidden">
-    <div id="cursor-outline"></div>
-    <div id="cursor-inner-dot"></div>
- <header class="w-[95%] max-w-7xl mx-auto mt-4 z-50 flex items-center gap-4">
+<body class=" text-black overflow-x-hidden">
+  <!-- HERO + HEADER WRAPPER -->
+<div class="relative overflow-hidden bg-gradient-to-br from-[#fff7ec] via-[#fff1d6] to-[#f8d8e8]">
 
-    <!-- Logo (LEFT SIDE - OUTSIDE BOX) -->
-    <img src="menulogo.png" class="h-12 w-auto object-contain">
-
-    <!-- ORIGINAL HEADER BOX (UNCHANGED) -->
+    <!-- Premium Background Shades -->
     <div
-        class="flex-1 bg-white border border-gray-700 rounded-full px-6 md:px-10 py-4 flex justify-between items-center shadow-lg">
-
-        <!-- Logo Text -->
-        <div class="text-2xl font-bold text-[var(--primary)]">
-           Smart Business <span class="text-[var(--secondary)]">Promotion</span>
-        </div>
-
-        <!-- Desktop Menu -->
-        <nav class="hidden md:flex space-x-8">
-            <a href="#"
-                class="relative text-[var(--primary)] font-bold after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[var(--primary)]">
-                Home
-            </a>
-            <a href="#about"
-                class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
-                About Us
-            </a>
-            <a href="#services"
-                class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
-                Services
-            </a>
-            <a href="#portfolio"
-                class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
-                Portfolio
-            </a>
-        </nav>
-
-        <!-- Contact Button -->
-        <a href="#contact"
-            class="hidden md:block bg-[var(--secondary)] font-bold hover:bg-purple-600 px-6 py-2 rounded-full font-semibold transition">
-            Contact Now
-        </a>
-
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-black text-2xl">
-            ☰
-        </button>
+        class="absolute top-[-80px] left-[-80px] w-72 h-72 bg-[var(--primary)] opacity-20 blur-[120px] rounded-full">
     </div>
 
-</header>
+    <div
+        class="absolute bottom-[-100px] right-[-80px] w-80 h-80 bg-[var(--secondary)] opacity-20 blur-[140px] rounded-full">
+    </div>
+
+    <div id="cursor-outline"></div>
+    <div id="cursor-inner-dot"></div>
+
+    <!-- HEADER -->
+    <header class="w-[95%] max-w-7xl mx-auto pt-4 z-50 flex items-center gap-4 relative">
+
+        <!-- Logo -->
+   <img src="logo.png" class="h-16 md:h-20 w-auto object-contain">
+
+        <!-- Header Box -->
+        <div
+            class="flex-1 bg-white/70 backdrop-blur-xl border border-white/40 rounded-full px-6 md:px-10 py-4 flex justify-between items-center shadow-[0_8px_30px_rgba(106,13,69,0.12)]">
+
+            <!-- Logo Text -->
+            <div class="text-2xl font-bold text-[var(--primary)]">
+                Smart Business <span class="text-[var(--secondary)]">Promotion</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#"
+                    class="relative text-[var(--primary)] font-bold after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[var(--primary)]">
+                    Home
+                </a>
+
+                <a href="#about"
+                    class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                    About Us
+                </a>
+
+                <a href="#services"
+                    class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                    Services
+                </a>
+
+                <a href="#portfolio"
+                    class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                    Portfolio
+                </a>
+                 <a href="#Showcase"
+                    class="relative text-[var(--primary)] font-bold hover:text-[var(--primary)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
+                    Showcase
+                </a>
+            </nav>
+
+            <!-- Contact Button -->
+            <a href="#contact"
+                class="hidden md:block bg-[var(--secondary)] font-bold hover:bg-purple-600 px-6 py-2 rounded-full transition text-white">
+                Contact Now
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-black text-2xl">
+                ☰
+            </button>
+        </div>
+
+    </header>
+
     <!-- Mobile Menu -->
     <div id="mobile-menu"
         class="hidden fixed inset-0 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-6 text-white text-xl z-50">
@@ -340,59 +377,71 @@
         <a href="#services" onclick="closeMenu()">Services</a>
         <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
 
-        <button class="bg-[var(--secondary)] px-6 py-2 rounded-md">
+        <button class="bg-[var(--secondary)] px-6 py-2 rounded-md text-white">
             Contact Me
         </button>
 
         <!-- Close Button -->
-        <button onclick="closeMenu()" class="absolute top-6 right-6 text-3xl">✕</button>
+        <button onclick="closeMenu()" class="absolute top-6 right-6 text-3xl text-white">✕</button>
     </div>
 
-    <!-- Script -->
+    <!-- HERO SECTION -->
+    <section
+        class="flex flex-col md:flex-row items-center justify-between px-10 py-16 max-w-7xl mx-auto min-h-[80vh] relative overflow-hidden">
 
-
-    <section class="flex flex-col md:flex-row items-center justify-between px-10 py-16 max-w-7xl mx-auto min-h-[80vh]">
-
-        <div class="relative w-72 h-80 md:w-[400px] md:h-[450px] flex items-center justify-center">
+        <div class="relative w-72 h-80 md:w-[400px] md:h-[450px] flex items-center justify-center z-10">
             <div class="blob-shape absolute inset-0 animate-pulse"></div>
-            <img src="hero.png" alt="Profile" class="relative z-10 w-[75%] h-[90%] object-cover rounded-full">
+
+            <img src="hero.png" alt="Profile"
+                class="relative z-10 w-[75%] h-[90%] object-cover rounded-full">
         </div>
 
-        <div class="md:w-1/2 mt-10 md:mt-0 space-y-6 text-center md:text-left">
-            <!-- <h3 class="text-xl font-medium">Hello, I'm</h3> -->
+        <div class="md:w-1/2 mt-10 md:mt-0 space-y-6 text-center md:text-left relative z-10">
 
             <h1 class="text-5xl md:text-6xl font-bold">Business Growth Boost</h1>
-            <h3 class="text-2xl md:text-3xl font-semibold">And I'm a <span id="typing-text"
-                    class="bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--primary)] text-transparent bg-clip-text">
-                </span></h3>
 
-            <p class="text-gray-300 leading-relaxed max-w-md">
+            <h3 class="text-2xl md:text-3xl font-semibold">
+                And I'm a
+                <span id="typing-text"
+                    class="bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--primary)] text-transparent bg-clip-text">
+                </span>
+            </h3>
+
+            <p class="text-gray-500 leading-relaxed max-w-md">
                 Smart business promotion helps you reach the right audience and grow faster in the digital world.
-                Boost your brand visibility, increase leads, and turn visitors into loyal customers. </p>
+                Boost your brand visibility, increase leads, and turn visitors into loyal customers.
+            </p>
 
             <div class="flex justify-center md:justify-start space-x-4">
                 <a href="https://www.facebook.com/profile.php?id=61574367906356"
-                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#081b29] transition"><i
-                        class="fab fa-facebook-f"></i></a>
-              
+                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#ffffff] transition">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
                 <a href="https://www.instagram.com/drsmartbusinesspromotion/"
-                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#081b29] transition"><i
-                        class="fab fa-instagram"></i></a>
+                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#ffffff] transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
                 <a href="https://www.linkedin.com/company/dr-smart-business-promotion/"
-                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#081b29] transition"><i
-                        class="fab fa-linkedin-in"></i></a>
+                    class="w-10 h-10 border-2 border-[var(--primary)] rounded-full flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[#ffffff] transition">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
 
             <div class="flex justify-center md:justify-start space-x-6 pt-4">
-                <!-- <button
-                    class="bg-[var(--primary)] text-[#081b29] px-8 py-3 rounded-full font-bold hover:shadow-[0_0_20px_#22d3ee] transition">Hire
-                    Me</button> -->
-                <a href="#contact"> <button
-                        class="border-2 border-[var(--primary)] text-[var(--primary)] px-8 py-3 rounded-full font-bold hover:bg-[var(--primary)] hover:text-[#081b29] transition">Contact
-                        Me
+                <a href="#contact">
+                    <button
+                        class="border-2 border-[var(--primary)] text-[var(--primary)] px-8 py-3 rounded-full font-bold hover:bg-[var(--primary)] hover:text-[#ffffff] transition">
+                        Contact Me
+                    </button>
+                </a>
             </div>
+
         </div>
-    </section>
+    </section> 
+
+</div>
 
     <div
         class="max-w-7xl mx-auto px-10 py-10 flex flex-wrap justify-between items-center border-t border-gray-700 reveal-on-scroll">
@@ -413,8 +462,17 @@
             <span class="text-sm text-gray-400 uppercase">Satisfied Clients<br>Clients</span>
         </div>
     </div>
-    <section id="about" class="bg-[#081b29] text-white py-20 px-10 reveal-on-scroll">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+<section id="about" class="relative bg-white text-black py-20 px-10 reveal-on-scroll overflow-hidden">
+
+    <!-- Background Shade Effect -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-[var(--primary)]/20 blur-[120px] rounded-full"></div>
+
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-[var(--secondary)]/20 blur-[140px] rounded-full"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-br from-white via-[#fffaf0] to-[#f8f5ff] opacity-80"></div>
+
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">    
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
 
             <!-- LEFT CONTENT -->
             <div class="md:w-1/2 space-y-6 order-2 md:order-1">
@@ -437,7 +495,7 @@
                     </h2>
                 </div>
                 <!-- Description -->
-                <p class="text-gray-300 leading-relaxed max-w-2xl text-justify">
+                <p class="text-gray-500 leading-relaxed max-w-2xl text-justify">
                     We are a results-driven digital marketing team dedicated to helping local businesses
                     grow smarter, faster, and stronger in the digital world.
                     <br><br>
@@ -534,9 +592,9 @@
                         </div>
 
                         <div
-                            class="absolute bottom-5 right-5 bg-black/60 border border-[var(--primary)] p-4 rounded-xl backdrop-blur-md shadow-lg">
+class="absolute bottom-5 right-5 bg-white/70 border border-[var(--primary)] p-4 rounded-xl backdrop-blur-md shadow-lg">
                             <h4 class="text-3xl font-bold text-[var(--primary)]">5+</h4>
-                            <p class="text-xs uppercase tracking-widest text-gray-300 font-bold">Years of Industry
+                            <p class="text-xs uppercase tracking-widest text-gray-500 font-bold">Years of Industry
                                 Experience</p>
                         </div>
 
@@ -548,116 +606,246 @@
         </div>
     </section>
 
-    <section id="services" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
-        <div class="max-w-7xl mx-auto">
+  <section id="services"
+    class="relative py-20 px-6 md:px-10 overflow-hidden bg-gradient-to-br from-[#fffaf2] via-[#fff7ec] to-[#fdf2f8] reveal-on-scroll">
 
-            <div class="flex items-center space-x-4 mb-6">
-                <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">
-                    Our Services
-                </h4>
-                <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
-            </div>
+    <!-- Background Glow -->
+    <div
+        class="absolute top-[-120px] left-[-120px] w-96 h-96 bg-[var(--primary)]/10 blur-[160px] rounded-full">
+    </div>
 
-            <h2 class="text-4xl md:text-5xl font-bold mb-16">
-                Solutions We
-                <span
-                    class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
-                    Provide
-                </span>
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8">
+    <div
+        class="absolute bottom-[-140px] right-[-120px] w-[28rem] h-[28rem] bg-[var(--secondary)]/10 blur-[180px] rounded-full">
+    </div>
 
-                <div
-                    class="group bg-[#000000] p-10 rounded-2xl border border-gray-700 hover:border-[var(--primary)] transition duration-500 relative overflow-hidden">
-                    <div
-                        class="absolute -right-10 -top-10 w-40 h-40 bg-[var(--primary)]/10 rounded-full blur-3xl group-hover:bg-[var(--primary)]/20 transition duration-500">
-                    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
 
-                    <div class="text-[var(--primary)] text-5xl mb-6 flex justify-between items-center">
-                        <i class="fas fa-laptop-code"></i>
-                        <span
-                            class="text-gray-800 text-6xl font-bold opacity-10 group-hover:opacity-20 transition">01</span>
-                    </div>
-
-                    <h3 class="text-2xl font-bold mb-4">Website Design & <span
-                            class="text-[var(--primary)]">Development</span>
-                    </h3>
-
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-400 text-sm">
-                        <!-- <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> E-commerce -->
-                        <!-- Solutions</li> -->
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Custom Web Design
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> AI Integration
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> SEO Optimization
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Speed Optimization
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Maintenance</li>
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Domain &
-                            Hosting
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Mobile
-                            Responsiveness
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-[var(--primary)] mr-2"></i> Dynamic &
-                            static
-                            websites
-                        </li>
-                    </ul>
-                </div>
-
-                <div
-                    class="group bg-[#000000] p-10 rounded-2xl border border-gray-700 hover:border-[var(--secondary)] transition duration-500 relative overflow-hidden">
-                    <div
-                        class="absolute -right-10 -top-10 w-40 h-40 bg-[var(--secondary)]/10 rounded-full blur-3xl group-hover:bg-[var(--secondary)]/20 transition duration-500">
-                    </div>
-
-                    <div class="text-[var(--secondary)] text-5xl mb-6 flex justify-between items-center">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span
-                            class="text-gray-800 text-6xl font-bold opacity-10 group-hover:opacity-20 transition">02</span>
-                    </div>
-
-                    <h3 class="text-2xl font-bold mb-2">Local SEO <span class="text-[var(--secondary)]">(GMB)</span></h3>
-                    <p class="text-gray-400 text-sm mb-6 ">Google Business Profile Optimization Specialist</p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-400 text-sm">
-                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> Profile
-                            Setup</div>
-                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> google
-                            profile
-                            Optimization</div>
-                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
-                            Photo/Video Management</div>
-                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> Number
-                            Activation</div>
-                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
-                            Suspended Recovery</div>
-                        <!-- <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
-                            Negative Review Mgmt</div> -->
-                        <div class="flex items-start"><i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i> Regular
-                            Posting</div>
-                    </div>
-                </div>
-
-            </div>
+        <!-- Heading -->
+        <div class="flex items-center gap-4 mb-6">
+            <h4 class="text-[var(--primary)] font-semibold tracking-[4px] uppercase whitespace-nowrap">
+                Our Services
+            </h4>
 
             <div
-                class="mt-16 bg-gradient-to-r from-cyan-900/20 to-pink-900/20 border border-gray-700 p-8 rounded-3xl text-center">
-                <h4 class="text-2xl font-bold mb-2">Ready to grow your business in Ahmedabad, Gandhinagar, Vadodara, Surat, Bhavnagar, Rajkot, junagath, Morabi</h4>
-                <p class="text-gray-400 mb-6">Let's take your business to the top of local search results!</p>
-                <a href="https://wa.me/919081908478?text=Hello%20DR%20Smart%20Business%20Promotion%20👋%20I%20am%20interested%20in%20your%20Website%20and%20Local%20SEO%20services."
-                    target="_blank"
-                    class="inline-block bg-[var(--primary)] text-[#081b29] px-10 py-3 rounded-full font-bold hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] transition">Get
-                    Started Today</a>
+                class="h-[2px] w-28 bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--primary)] rounded-full">
             </div>
         </div>
-    </section>
 
-    <section id="portfolio" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
-        <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 leading-tight">
+            Solutions We
+            <span
+                class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
+                Provide
+            </span>
+        </h2>
+
+        <!-- Cards -->
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- CARD 01 -->
+            <div
+                class="group relative overflow-hidden rounded-[32px] border border-[rgba(255,156,19,0.18)] bg-white/75 backdrop-blur-xl p-10 transition-all duration-500 hover:-translate-y-2 hover:border-[var(--primary)] hover:shadow-[0_0_45px_rgba(255,156,19,0.28)]">
+
+                <!-- Premium Border Glow -->
+                <div
+                    class="absolute inset-0 rounded-[32px] border border-transparent group-hover:border-[var(--primary)]/40 group-hover:shadow-[inset_0_0_30px_rgba(255,156,19,0.25)] transition-all duration-500">
+                </div>
+
+                <!-- Glow -->
+                <div
+                    class="absolute -right-16 -top-16 w-52 h-52 bg-[var(--primary)]/10 rounded-full blur-3xl group-hover:bg-[var(--primary)]/20 transition duration-500">
+                </div>
+
+                <!-- Content -->
+                <div class="relative z-10">
+
+                    <div class="flex justify-between items-center mb-6">
+                        <div
+                            class="w-20 h-20 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-[var(--primary)] text-4xl group-hover:scale-110 transition duration-500">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+
+                        <span
+                            class="text-7xl font-extrabold text-gray-200 opacity-30 group-hover:opacity-50 transition duration-500">
+                            01
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-6 leading-snug">
+                        Website Design &
+                        <span class="text-[var(--primary)]">Development</span>
+                    </h3>
+
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600">
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            Custom Web Design
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            AI Integration
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            SEO Optimization
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            Speed Optimization
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            Maintenance
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            Domain & Hosting
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            Mobile Responsive
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[var(--primary)] mr-2"></i>
+                            Dynamic & Static Sites
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- CARD 02 -->
+            <div
+                class="group relative overflow-hidden rounded-[32px] border border-[rgba(106,13,69,0.18)] bg-white/75 backdrop-blur-xl p-10 transition-all duration-500 hover:-translate-y-2 hover:border-[var(--secondary)] hover:shadow-[0_0_45px_rgba(106,13,69,0.30)]">
+
+                <!-- Premium Border Glow -->
+                <div
+                    class="absolute inset-0 rounded-[32px] border border-transparent group-hover:border-[var(--secondary)]/40 group-hover:shadow-[inset_0_0_30px_rgba(106,13,69,0.25)] transition-all duration-500">
+                </div>
+
+                <!-- Glow -->
+                <div
+                    class="absolute -right-16 -top-16 w-52 h-52 bg-[var(--secondary)]/10 rounded-full blur-3xl group-hover:bg-[var(--secondary)]/20 transition duration-500">
+                </div>
+
+                <!-- Content -->
+                <div class="relative z-10">
+
+                    <div class="flex justify-between items-center mb-6">
+                        <div
+                            class="w-20 h-20 rounded-2xl bg-[var(--secondary)]/10 flex items-center justify-center text-[var(--secondary)] text-4xl group-hover:scale-110 transition duration-500">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+
+                        <span
+                            class="text-7xl font-extrabold text-gray-200 opacity-30 group-hover:opacity-50 transition duration-500">
+                            02
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-2">
+                        Local SEO
+                        <span class="text-[var(--secondary)]">(GMB)</span>
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Google Business Profile Optimization Specialist
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600">
+
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Profile Setup
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Google Profile Optimization
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Photo/Video Management
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Number Activation
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Suspended Recovery
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-arrow-right text-[var(--secondary)] mt-1 mr-2"></i>
+                            Regular Posting
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+       <div
+    class="relative overflow-hidden mt-16 rounded-[36px] 
+    border border-[rgba(255,156,19,0.25)] 
+    bg-white/70 backdrop-blur-xl p-10 text-center 
+    shadow-[0_10px_40px_rgba(0,0,0,0.06)]
+    hover:border-[var(--primary)] 
+    hover:shadow-[0_0_45px_rgba(255,156,19,0.25)]
+    transition-all duration-500">
+
+    <!-- Glow -->
+    <div
+        class="absolute top-[-80px] left-[20%] w-72 h-72 bg-[var(--primary)]/10 blur-[130px] rounded-full">
+    </div>
+
+    <div
+        class="absolute bottom-[-80px] right-[20%] w-72 h-72 bg-[var(--secondary)]/10 blur-[130px] rounded-full">
+    </div>
+
+    <div class="relative z-10">
+
+        <h4 class="text-2xl md:text-3xl font-bold mb-4 leading-relaxed">
+            Ready to grow your business in Ahmedabad, Gandhinagar, Vadodara,
+            Surat, Bhavnagar, Rajkot, Junagadh & Morbi?
+        </h4>
+
+        <p class="text-gray-500 mb-8">
+            Let's take your business to the top of local search results!
+        </p>
+
+        <a href="https://wa.me/919081908478?text=Hello%20DR%20Smart%20Business%20Promotion%20👋%20I%20am%20interested%20in%20your%20Website%20and%20Local%20SEO%20services."
+            target="_blank"
+            class="inline-flex items-center gap-3 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white px-10 py-4 rounded-full font-bold transition duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(106,13,69,0.30)]">
+
+            <i class="fab fa-whatsapp text-2xl"></i>
+            Get Started Today
+        </a>
+
+    </div>
+</div>
+
+    </div>
+</section>
+
+<section id="portfolio" class="bg-[#ffffff] text-black py-20 px-10 reveal-on-scroll">
+            <div class="max-w-7xl mx-auto">
 
             <!-- Heading -->
             <div class="flex items-center space-x-4 mb-6">
@@ -794,7 +982,7 @@
             <!-- BUTTON -->
             <!-- <div class="mt-16 text-center">
                 <button
-                    class="bg-transparent border-2 border-[var(--secondary)] text-[var(--secondary)] px-10 py-3 rounded-full font-bold hover:bg-[var(--secondary)] hover:text-white transition">
+                    class="bg-transparent border-2 border-[var(--secondary)] text-[var(--secondary)] px-10 py-3 rounded-full font-bold hover:bg-[var(--secondary)] hover:text-black transition">
                     View All Projects
                 </button>
             </div> -->
@@ -902,7 +1090,7 @@
 
 
 
-    <section id="portfolio" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
+    <section id="portfolio" class="bg-[#ffffff] text-black py-20 px-10 border-t border-gray-800 reveal-on-scroll">
         <div class="max-w-7xl mx-auto">
 
 
@@ -956,7 +1144,7 @@
 
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-[#081b29] via-[#081b29]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                        <span class="text-xs text-[var(--secondary)] uppercase font-bold">Salon & Spa</span>
+                        <span class="text-xs text-[var(--primary)] uppercase font-bold">Salon & Spa</span>
                         <h3 class="text-xl font-bold mt-1 text-white">Salon & Spa Google SEO Services</h3>
                         <p class="text-gray-300 text-sm mt-2"> Increase bookings and attract local customers with high-ranking SEO and Google profile optimization.</p>
                     </div>
@@ -1055,7 +1243,7 @@ Get more patients and rank your clinic higher on Google with proven SEO strategi
 
             <!-- Close Button -->
             <button onclick="closeModal()"
-                class="absolute top-4 right-4 text-white bg-black/50 hover:bg-black w-10 h-10 rounded-full z-10 transition">✕</button>
+                class="absolute top-4 right-4 text-black bg-black/50 hover:bg-black w-10 h-10 rounded-full z-10 transition">✕</button>
 
             <!-- Image FULL SHOW -->
             <div class="w-full h-[300px] md:h-[400px] bg-black flex items-center justify-center">
@@ -1065,7 +1253,7 @@ Get more patients and rank your clinic higher on Google with proven SEO strategi
             <!-- Content -->
             <div class="p-8">
                 <h2 id="modalTitle" class="text-3xl font-bold text-white mb-4"></h2>
-                <p id="modalDesc" class="text-gray-300 leading-relaxed"></p>
+                <p id="modalDesc" class="text-gray-500 leading-relaxed"></p>
             </div>
 
         </div>
@@ -1101,7 +1289,7 @@ Get more patients and rank your clinic higher on Google with proven SEO strategi
         });
     </script>
 <!-- PORTFOLIO BENTO SECTION -->
-<section id="portfolio" class="py-24 px-6 md:px-10 overflow-hidden relative">
+<section id="Showcase" class="py-24 px-6 md:px-10 overflow-hidden relative">
 
     <!-- BACKGROUND GLOW -->
     <div class="absolute top-0 left-0 w-80 h-80 bg-[var(--secondary)]/20 blur-[140px] rounded-full"></div>
@@ -1131,7 +1319,7 @@ Social Media Showcase
             </div>
 
             <!-- <a href="#"
-                class="bg-[var(--secondary)] hover:bg-purple-700 text-white px-8 py-4 rounded-full flex items-center gap-3 transition-all font-bold shadow-[0_0_25px_rgba(106,1,106,0.35)]">
+                class="bg-[var(--secondary)] hover:bg-purple-700 text-black px-8 py-4 rounded-full flex items-center gap-3 transition-all font-bold shadow-[0_0_25px_rgba(106,1,106,0.35)]">
 
                 View All Creatives
                 <span>→</span>
@@ -1145,17 +1333,15 @@ Social Media Showcase
 
     <!-- LEFT LARGE CARD -->
    <!-- Slider Container -->
-<div class="lg:col-span-2 rounded-[45px] bg-gradient-to-br from-[#120012] via-[#240024] to-[#081b29] border border-white/10 p-8 md:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden group">
-
-    <!-- Section Title (Optional) -->
+<div class="lg:col-span-2 rounded-[45px] bg-gradient-to-br from-[#fff7ec] via-[#fff1d6] to-[#f8d8e8] border border-white/30 p-8 md:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden group">    <!-- Section Title (Optional) -->
     <div class="flex justify-between items-center mb-6">
-        <h3 class="text-white font-bold tracking-widest text-xs uppercase">Social Media Creatives</h3>
+        <h3 class="text-black font-bold tracking-widest text-xs uppercase"></h3>
         <!-- Navigation Buttons -->
         <div class="flex gap-3">
-            <button onclick="moveSlider('prev')" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[var(--primary)] hover:text-black transition-all duration-500 shadow-lg">
+            <button onclick="moveSlider('prev')" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-black hover:bg-[var(--primary)] hover:text-black transition-all duration-500 shadow-lg">
                 <i class="fas fa-chevron-left text-xs"></i>
             </button>
-            <button onclick="moveSlider('next')" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[var(--primary)] hover:text-black transition-all duration-500 shadow-lg">
+            <button onclick="moveSlider('next')" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-black hover:bg-[var(--primary)] hover:text-black transition-all duration-500 shadow-lg">
                 <i class="fas fa-chevron-right text-xs"></i>
             </button>
         </div>
@@ -1167,7 +1353,7 @@ Social Media Showcase
     <!-- Slide 1 -->
     <div class="min-w-[45%] md:min-w-[30%] group/item">
         <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-2 transition-all duration-500 hover:border-[var(--primary)] hover:shadow-[0_0_30px_rgba(248,207,65,0.2)]">
-            <img src="2_6_2025_baaki.png" 
+            <img src="post/2_6_2025_baaki.png" 
                  class="w-full h-48 md:h-64 object-contain cursor-pointer transition-transform duration-700 group-hover/item:scale-110" 
                  onclick="openUniversalModal(this.src, '')">
         </div>
@@ -1175,7 +1361,7 @@ Social Media Showcase
     <!-- Slide 2 -->
     <div class="min-w-[45%] md:min-w-[30%] group/item mt-6">
         <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-2 transition-all duration-500 hover:border-[var(--secondary)] hover:shadow-[0_0_30px_rgba(106,1,106,0.3)]">
-            <img src="30_5_2026_baki.png" 
+            <img src="post/30_5_2026_baki.png" 
                  class="w-full h-48 md:h-64 object-contain cursor-pointer transition-transform duration-700 group-hover/item:scale-110" 
                  onclick="openUniversalModal(this.src, '')">
         </div>
@@ -1183,7 +1369,7 @@ Social Media Showcase
     <!-- Slide 3 -->
     <div class="min-w-[45%] md:min-w-[30%] group/item">
         <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-2 transition-all duration-500 hover:border-[var(--primary)] hover:shadow-[0_0_30px_rgba(248,207,65,0.2)]">
-            <img src="drsmartbusinesspromotion@ (1).png" 
+            <img src="post/drsmartbusinesspromotion@ (1).png" 
                  class="w-full h-48 md:h-64 object-contain cursor-pointer transition-transform duration-700 group-hover/item:scale-110" 
                  onclick="openUniversalModal(this.src, '')">
         </div>
@@ -1191,7 +1377,14 @@ Social Media Showcase
     <!-- Slide 4 -->
     <div class="min-w-[45%] md:min-w-[30%] group/item mt-6">
         <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-2 transition-all duration-500 hover:border-[var(--secondary)]">
-            <img src="local seo service in Ahmedabad DR Smart Business Promotion.png" 
+            <img src="post/local seo service in Ahmedabad DR Smart Business Promotion.png" 
+                 class="w-full h-48 md:h-64 object-contain cursor-pointer transition-transform duration-700 group-hover/item:scale-110" 
+                 onclick="openUniversalModal(this.src, '')">
+        </div>
+    </div>
+     <div class="min-w-[45%] md:min-w-[30%] group/item ">
+        <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-2 transition-all duration-500 hover:border-[var(--secondary)]">
+            <img src="post/local marketing service provider company in Ahmedabad.png" 
                  class="w-full h-48 md:h-64 object-contain cursor-pointer transition-transform duration-700 group-hover/item:scale-110" 
                  onclick="openUniversalModal(this.src, '')">
         </div>
@@ -1201,19 +1394,40 @@ Social Media Showcase
     <div id="uModalCard" class="bg-[#0a253a] w-full max-w-2xl rounded-[2rem] border border-white/10 relative overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
         
         <!-- Close Button -->
-        <button onclick="closeUniversalModal()" class="absolute top-4 right-4 text-white bg-black/50 hover:bg-white hover:text-black w-10 h-10 rounded-full z-20 transition-all flex items-center justify-center">
+        <button onclick="closeUniversalModal()" class="absolute top-4 right-4 text-black bg-black/50 hover:bg-white hover:text-black w-10 h-10 rounded-full z-20 transition-all flex items-center justify-center">
             <i class="fas fa-times"></i>
         </button>
 
         <div class="p-6">
             <img id="uModalImg" src="" class="w-full h-auto max-h-[70vh] object-contain rounded-xl shadow-lg mb-4">
-            <h2 id="uModalTitle" class="text-xl font-bold text-white text-center"></h2>
+            <h2 id="uModalTitle" class="text-xl font-bold text-black text-center"></h2>
         </div>
     </div>
 </div>
     </div>
 </div>
+<script>
+let currentIndex = 0;
 
+function moveSlider(direction) {
+    const slider = document.getElementById("imageSlider");
+    const slides = slider.children;
+
+    const visibleSlides = window.innerWidth < 768 ? 1 : 3;
+    const maxIndex = slides.length - visibleSlides;
+
+    if (direction === "next") {
+        currentIndex++;
+        if (currentIndex > maxIndex) currentIndex = 0;
+    } else {
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = maxIndex;
+    }
+
+    const slideWidth = slides[0].offsetWidth + 24; // gap included
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+</script>
 <!-- Simple Slider Logic -->
 <script>
  function openUniversalModal(imgSrc, title) {
@@ -1234,8 +1448,8 @@ Social Media Showcase
         card.classList.add('scale-100');
     }, 10);
 
-    // Disable page scroll
-    document.body.style.overflow = 'hidden';
+// Keep scroll enabled for all floating buttons
+    // document.body.style.overflow = 'hidden';
 }
 
 function closeUniversalModal() {
@@ -1271,24 +1485,24 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
         <!-- CARD 1 -->
         <div
-            class="rounded-[45px] bg-gradient-to-br from-[#120012] via-[#240024] to-[#081b29] border border-white/10 p-6 shadow-xl">
+            class="rounded-[45px] bg-gradient-to-br from-[#fff7ec] via-[#fff1d6] to-[#f8d8e8]border border-white/10 p-6 shadow-xl">
 
             <div class="grid grid-cols-3 gap-3 mb-6">
-                <img src="drsmartbusinesspromotion@ (10).png" class="w-full h-20 object-contain mt-0">
-                <img src="drsmartbusinesspromotion@ (13).png" class="w-full h-20 object-contain mt-4">
-                <img src="drsmartbusinesspromotion@ (2).png" class="w-full h-20 object-contain mt-0">
+                <img src="post/drsmartbusinesspromotion@ (10).png" class="w-full h-20 object-contain mt-0">
+                <img src="post/drsmartbusinesspromotion@ (13).png" class="w-full h-20 object-contain mt-4">
+                <img src="post/drsmartbusinesspromotion@ (2).png" class="w-full h-20 object-contain mt-0">
             </div>
 
         </div>
 
         <!-- CARD 2 -->
         <div
-            class="rounded-[45px] bg-gradient-to-br from-[#120012] via-[#240024] to-[#081b29] border border-white/10 p-6 shadow-xl">
+            class="rounded-[45px] bg-gradient-to-br from-[#fff7ec] via-[#fff1d6] to-[#f8d8e8] border border-white/10 p-6 shadow-xl">
 
             <div class="grid grid-cols-3 gap-3 mb-6">
-                <img src="drsmartbusinesspromotion@ (4).png" class="w-full h-20 object-contain mt-4">
-                <img src="drsmartbusinesspromotion@ (5).png" class="w-full h-20 object-contain mt-0">
-                <img src="drsmartbusinesspromotion@ (6).png" class="w-full h-20 object-contain mt-4">
+                <img src="post/drsmartbusinesspromotion@ (4).png" class="w-full h-20 object-contain mt-4">
+                <img src="post/drsmartbusinesspromotion@ (5).png" class="w-full h-20 object-contain mt-0">
+                <img src="post/drsmartbusinesspromotion@ (6).png" class="w-full h-20 object-contain mt-4">
             </div>
 
         </div>
@@ -1299,74 +1513,107 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
     </div>
 
 </section>
-    <section id="success" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-left mb-16">
-                <div class="flex items-center space-x-4 mb-6">
-                    <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">Success
-                        Roadmap
-                    </h4>
-                    <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+<section id="success" class="bg-[#ffffff] text-black py-20 px-10 border-t border-gray-200 reveal-on-scroll">
+    <div class="max-w-7xl mx-auto">
 
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold">Our Business <span
-                        class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">Growth
-                        Process</span></h2>
-
+        <!-- TITLE -->
+        <div class="text-left mb-16">
+            <div class="flex items-center space-x-4 mb-6">
+                <h4 class="text-[var(--primary)] font-semibold tracking-widest uppercase whitespace-nowrap">
+                    Success Roadmap
+                </h4>
+                <div class="h-[2px] w-24 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8 relative">
-                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -translate-y-1/2 z-0">
-                </div>
-
-<div class="relative z-10 group will-change-transform">
-                    <div
-                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[var(--primary)] p-8 rounded-2xl group-hover:border-[var(--primary)] group-hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] group-hover:-translate-y-4 group-hover:rotate-1 group-hover:skew-x-1 transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-2xl">
-                        <div
-                            class="w-16 h-16 bg-[var(--primary)] text-[#081b29] rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.8)] transition-all duration-500">
-                            01</div>
-                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Discovery</h3>
-                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">We understand your business goals and target audience.</p>
-                    </div>
-                </div>
-
-<div class="relative z-10 group will-change-transform">
-                    <div
-                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[#8B5CF6] p-8 rounded-2xl group-hover:border-[#8B5CF6] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] group-hover:-translate-y-4 group-hover:rotate-[-1deg] group-hover:skew-x-[-1deg] transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-2xl">
-                        <div
-                            class="w-16 h-16 bg-[#8B5CF6] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(139,92,246,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.8)] transition-all duration-500">
-                            02</div>
-                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Strategy</h3>
-                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">We create a custom SEO and design strategy that delivers measurable results.</p>
-                    </div>
-                </div>
-
-<div class="relative z-10 group will-change-transform">
-                    <div
-                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[var(--primary)] p-8 rounded-2xl group-hover:border-[var(--primary)] group-hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] group-hover:-translate-y-4 group-hover:rotate-1 group-hover:skew-x-1 transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-2xl">
-                        <div
-                            class="w-16 h-16 bg-[var(--primary)] text-[#081b29] rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.8)] transition-all duration-500">
-                            03</div>
-                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Execution</h3>
-                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">Development and optimization begin using modern tools and technologies.</p>
-                    </div>
-                </div>
-
-<div class="relative z-10 group will-change-transform">
-                    <div
-                        class="bg-[#0a253a]/80 backdrop-blur-md border-2 border-[#8B5CF6] p-8 rounded-2xl group-hover:border-[#8B5CF6] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] group-hover:-translate-y-4 group-hover:rotate-[-1deg] group-hover:skew-x-[-1deg] transition-all duration-700 ease-out text-center shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-2xl">
-                        <div
-                            class="w-16 h-16 bg-[#8B5CF6] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_20px_rgba(139,92,246,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.8)] transition-all duration-500">
-                            04</div>
-                        <h3 class="text-xl font-bold mb-3 group-hover:translate-y-[-2px] transition-transform duration-500">Growth</h3>
-                        <p class="text-gray-400 text-sm group-hover:text-white/90 transition-colors duration-500">After launch, we continuously track performance and generate leads.</p>
-                    </div>
-                </div>
-            </div>
+            <h2 class="text-4xl md:text-5xl font-bold">
+                Our Business 
+                <span class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-transparent bg-clip-text">
+                    Growth Process
+                </span>
+            </h2>
         </div>
-    </section>
-    <section id="smart" class="bg-[#06141f] py-16 md:py-20 px-4 sm:px-6 md:px-10 reveal-on-scroll relative bg-[#06141f]">
-        <!-- Animated Dots Background -->
+
+        <!-- GRID -->
+        <div class="grid md:grid-cols-4 gap-8 relative">
+
+            <!-- LINE -->
+            <div class="hidden md:block absolute top-1/2 left-0 w-full h-[2px] 
+                bg-gradient-to-r from-transparent via-gray-300 to-transparent -translate-y-1/2 z-0"></div>
+
+            <!-- CARD 01 -->
+            <div class="relative z-10 group">
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center
+                    shadow-lg hover:shadow-[0_10px_40px_rgba(255,156,19,0.25)]
+                    hover:-translate-y-4 transition duration-500">
+
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full 
+                        bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]
+                        text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                        01
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">Discovery</h3>
+                    <p class="text-gray-500 text-sm">We understand your business goals and target audience.</p>
+                </div>
+            </div>
+
+            <!-- CARD 02 -->
+            <div class="relative z-10 group">
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center
+                    shadow-lg hover:shadow-[0_10px_40px_rgba(106,13,69,0.25)]
+                    hover:-translate-y-4 transition duration-500">
+
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full 
+                        bg-gradient-to-r from-[var(--secondary)] to-purple-500
+                        text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                        02
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">Strategy</h3>
+                    <p class="text-gray-500 text-sm">We create a custom SEO and design strategy that delivers results.</p>
+                </div>
+            </div>
+
+            <!-- CARD 03 -->
+            <div class="relative z-10 group">
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center
+                    shadow-lg hover:shadow-[0_10px_40px_rgba(255,156,19,0.25)]
+                    hover:-translate-y-4 transition duration-500">
+
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full 
+                        bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]
+                        text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                        03
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">Execution</h3>
+                    <p class="text-gray-500 text-sm">Development and optimization begin using modern tools.</p>
+                </div>
+            </div>
+
+            <!-- CARD 04 -->
+            <div class="relative z-10 group">
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center
+                    shadow-lg hover:shadow-[0_10px_40px_rgba(106,13,69,0.25)]
+                    hover:-translate-y-4 transition duration-500">
+
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full 
+                        bg-gradient-to-r from-[var(--secondary)] to-purple-500
+                        text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                        04
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">Growth</h3>
+                    <p class="text-gray-500 text-sm">We track performance and continuously generate leads.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="smart"
+    class="py-16 md:py-20 px-4 sm:px-6 md:px-10 reveal-on-scroll relative 
+    bg-gradient-to-br from-[#ffffff] via-[#f3f4f6] to-[#ffe4ec]">        <!-- Animated Dots Background -->
         <div class="absolute inset-0 z-0 overflow-hidden">
 
             <!-- Small Dots Grid -->
@@ -1405,74 +1652,81 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                     Junagadh, and Gandhinagar, you need more than just a website — you need a customer-converting
                     machine. </p>
 
-                <div class="space-y-3 md:space-y-4">
+               <div class="space-y-3 md:space-y-4">
 
-                    <div class="flex items-center gap-3 sm:gap-4 bg-[#0a253a]/50 p-3 sm:p-4 rounded-lg border-l-4 border-[var(--primary)] 
-                hover:bg-[#0a253a] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] 
-                transition-all duration-300 cursor-pointer group">
-                        <i class="fas fa-rocket text-[var(--primary)] group-hover:scale-125 transition-transform"></i>
-                        <span class="font-semibold text-sm sm:text-base">Fast Loading Speed (90+ PageSpeed Score)</span>
-                    </div>
+    <div class="flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-[#fff7ec] to-[#ffe4ec] p-3 sm:p-4 rounded-lg border-l-4 border-[var(--primary)] 
+    hover:bg-gradient-to-r hover:from-[#ffe4ec] hover:to-[#fff7ec]
+    hover:translate-x-2 hover:shadow-[0_0_20px_rgba(255,156,19,0.2)] 
+    transition-all duration-300 cursor-pointer group">
 
-                    <div class="flex items-center gap-3 sm:gap-4 bg-[#0a253a]/50 p-3 sm:p-4 rounded-lg border-l-4 border-[var(--secondary)] 
-                hover:bg-[#0a253a] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(219,39,119,0.2)] 
-                transition-all duration-300 cursor-pointer group">
-                        <i class="fas fa-mobile-alt text-[var(--secondary)] group-hover:scale-125 transition-transform"></i>
-                        <span class="font-semibold text-sm sm:text-base">100% Responsive for All Mobile Devices</span>
-                    </div>
+        <i class="fas fa-rocket text-[var(--primary)] group-hover:scale-125 transition-transform"></i>
+        <span class="font-semibold text-sm sm:text-base">Fast Loading Speed (90+ PageSpeed Score)</span>
+    </div>
 
-                    <div class="flex items-center gap-3 sm:gap-4 bg-[#0a253a]/50 p-3 sm:p-4 rounded-lg border-l-4 border-[var(--primary)] 
-                hover:bg-[#0a253a] hover:translate-x-2 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] 
-                transition-all duration-300 cursor-pointer group">
-                        <i
-                            class="fas fa-search-location text-[var(--primary)] group-hover:scale-125 transition-transform"></i>
-                        <span class="font-semibold text-sm sm:text-base">High Ranking on Local Search Results</span>
-                    </div>
+    <div class="flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-[#f3f0ff] to-[#e8ddff] p-3 sm:p-4 rounded-lg border-l-4 border-[var(--secondary)] 
+    hover:bg-gradient-to-r hover:from-[#e8ddff] hover:to-[#f3f0ff]
+    hover:translate-x-2 hover:shadow-[0_0_20px_rgba(106,13,69,0.2)] 
+    transition-all duration-300 cursor-pointer group">
 
-                </div>
+        <i class="fas fa-mobile-alt text-[var(--secondary)] group-hover:scale-125 transition-transform"></i>
+        <span class="font-semibold text-sm sm:text-base">100% Responsive for All Mobile Devices</span>
+    </div>
+
+    <div class="flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-[#ecfff7] to-[#ddfff1] p-3 sm:p-4 rounded-lg border-l-4 border-[var(--primary)] 
+    hover:bg-gradient-to-r hover:from-[#ddfff1] hover:to-[#ecfff7]
+    hover:translate-x-2 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] 
+    transition-all duration-300 cursor-pointer group">
+
+        <i class="fas fa-search-location text-[var(--primary)] group-hover:scale-125 transition-transform"></i>
+        <span class="font-semibold text-sm sm:text-base">High Ranking on Local Search Results</span>
+    </div>
+
+</div>
             </div>
 
-            <div class="lg:w-1/2 relative p-4 sm:p-6 md:p-10 overflow-hidden rounded-3xl group">
+         <div class="lg:w-1/2 relative p-4 sm:p-6 md:p-10 overflow-hidden rounded-3xl group">
 
-                <img src="ChatGPT Image Apr 1, 2026, 03_05_44 PM.png" alt="Tech Background"
-                    class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-30 group-hover:scale-110 transition-transform duration-700 ease-in-out z-0">
+    <!-- IMAGE -->
+    <img src="ChatGPT Image Apr 1, 2026, 03_05_44 PM.png" alt="Tech Background"
+        class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-60 group-hover:scale-110 transition-transform duration-700 ease-in-out z-0">
 
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-[#081b29]/90 via-[#0a253a]/70 to-[#081b29]/90 rounded-3xl z-1">
-                </div>
+    <!-- PREMIUM LIGHT OVERLAY -->
+    <div class="absolute inset-0 bg-gradient-to-br from-white/40 via-[#fff7ec]/60 to-[#ffe4ec]/60 rounded-3xl z-1"></div>
 
-                <div
-                    class="absolute -top-16 -left-16 w-60 sm:w-80 h-60 sm:h-80 bg-[var(--primary)]/10 rounded-full blur-[100px] z-2 animate-pulse">
-                </div>
-                <div
-                    class="absolute -bottom-16 -right-16 w-60 sm:w-80 h-60 sm:h-80 bg-[var(--secondary)]/10 rounded-full blur-[100px] z-2 animate-pulse delay-700">
-                </div>
+    <!-- SOFT GLOW EFFECT -->
+    <div class="absolute -top-16 -left-16 w-60 sm:w-80 h-60 sm:h-80 bg-[var(--primary)]/10 rounded-full blur-[120px] z-2 animate-pulse"></div>
+    <div class="absolute -bottom-16 -right-16 w-60 sm:w-80 h-60 sm:h-80 bg-[var(--secondary)]/10 rounded-full blur-[120px] z-2 animate-pulse delay-700"></div>
 
-                <div class="relative grid grid-cols-2 gap-3 sm:gap-6 z-10">
+    <!-- CONTENT -->
+    <div class="relative grid grid-cols-2 gap-3 sm:gap-6 z-10">
 
-                    <div
-                        class="bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10 text-center hover:-translate-y-2 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-[var(--primary)]/50">
-                        <i class="fas fa-shield-alt text-3xl sm:text-5xl text-[var(--primary)] mb-3 sm:mb-4"></i>
-                        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">100%</h3>
-                        <p class="text-gray-400 text-[10px] sm:text-xs uppercase mt-1">Secure Code</p>
-                    </div>
+        <div class="bg-white/60 backdrop-blur-xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/40 text-center
+            hover:-translate-y-2 transition-all duration-500 shadow-lg">
 
-                    <div
-                        class="bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10 text-center mt-6 sm:mt-10 hover:-translate-y-2 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-[var(--secondary)]/50">
-                        <i class="fas fa-headset text-3xl sm:text-5xl text-[var(--secondary)] mb-3 sm:mb-4"></i>
-                        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">24/7</h3>
-                        <p class="text-gray-400 text-[10px] sm:text-xs uppercase mt-1">Support</p>
-                    </div>
+            <i class="fas fa-shield-alt text-3xl sm:text-5xl text-[var(--primary)] mb-3 sm:mb-4"></i>
 
-                </div>
-            </div>
+            <h3 class="text-2xl sm:text-4xl font-extrabold text-black">100%</h3>
+            <p class="text-gray-600 text-[10px] sm:text-xs uppercase mt-1">Secure Code</p>
+        </div>
+
+        <div class="bg-white/60 backdrop-blur-xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/40 text-center mt-6 sm:mt-10
+            hover:-translate-y-2 transition-all duration-500 shadow-lg">
+
+            <i class="fas fa-headset text-3xl sm:text-5xl text-[var(--secondary)] mb-3 sm:mb-4"></i>
+
+            <h3 class="text-2xl sm:text-4xl font-extrabold text-black">24/7</h3>
+            <p class="text-gray-600 text-[10px] sm:text-xs uppercase mt-1">Support</p>
+        </div>
+
+    </div>
+</div>
 
         </div>
     </section>
-    <section id="trust" class="bg-[#081b29] py-28 px-6 md:px-10 relative overflow-hidden">
+    <section id="trust" class="bg-[#ffffff] py-28 px-6 md:px-10 relative overflow-hidden">
 
         <div
-            class="absolute -top-10 -left-10 text-[15rem] font-black text-white/[0.02] select-none pointer-events-none">
+            class="absolute -top-10 -left-10 text-[15rem] font-black text-black/[0.02] select-none pointer-events-none">
             TRUST
         </div>
 
@@ -1481,7 +1735,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
             <div class="lg:w-2/5 text-left">
                 <h4 class="text-[var(--primary)] font-bold uppercase tracking-[0.4em] text-xs mb-4">Voice of Success
                 </h4>
-                <h2 class="text-5xl md:text-7xl font-black text-white leading-tight">
+                <h2 class="text-5xl md:text-7xl font-black text-black leading-tight">
                     THEY <br> <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)]">BELIEVED</span>
                     <br> IN US.
@@ -1501,7 +1755,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                             class="w-12 h-12 rounded-full border-2 border-[#081b29] bg-purple-500 flex items-center justify-center font-bold">
                             V</div>
                     </div>
-                    <p class="text-sm text-gray-400"><span class="text-white font-bold">15+</span> Happy Clients</p>
+                    <p class="text-sm text-gray-400"><span class="text-black font-bold">15+</span> Happy Clients</p>
                 </div>
             </div>
 
@@ -1512,7 +1766,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                     <div
                         class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-12 bg-[var(--primary)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6 ">
+                    <p class="text-gray-500 text-lg leading-relaxed mb-6 ">
                         "Smart Business Promotion team ne meri Google My Business listing ko bahut achhe se optimize kiya. Pehle meri profile pe visibility kam thi, lekin ab top 5 mai  show ho rahi hai. Local SEO strategy aur keyword targeting perfect hai. Sabse best part hai ki ab daily genuine inquiries aa rahi hai. mai to honestly sabko recommended karunga. muje yah one of the best agency  gujarat lagi hai...."
                     </p>
                     <div class="flex justify-between items-center">
@@ -1520,32 +1774,32 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                             <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-blue-600">
                             </div>
                             <div>
-                                <h4 class="text-white font-black tracking-wide">ARJUN PARMAR</h4>
+                                <h4 class="text-black font-black tracking-wide">ARJUN PARMAR</h4>
                                 <p class="text-[var(--primary)] text-xs font-bold uppercase">Owner, Green Apple Studio
                                 </p>
                             </div>
                         </div>
-                        <div class="text-3xl text-white/10 font-serif">“</div>
+                        <div class="text-3xl text-black/10 font-serif">“</div>
                     </div>
                 </div>
 
                 <div
-                    class="bg-[#0a253a] border border-gray-800 p-8 rounded-[2.5rem] transform hover:-translate-y-2 transition-all duration-500 hover:border-[var(--secondary)] shadow-2xl relative md:mr-12 group">
+                    class="bg-[#ffffff] border border-gray-800 p-8 rounded-[2.5rem] transform hover:-translate-y-2 transition-all duration-500 hover:border-[var(--secondary)] shadow-2xl relative md:mr-12 group">
                     <div
                         class="absolute -right-4 top-1/2 -translate-y-1/2 w-1 h-12 bg-[var(--secondary)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6 ">
+                    <p class="text-gray-500 text-lg leading-relaxed mb-6 ">
                         "Creative designs and well-planned social media handling. My brand visibility and engagement improved a lot. Great work! Thank you social media team of DR Smart Business Promotion".....Thank again..."
                     </p>
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--secondary)] to-purple-600"></div>
                             <div>
-                                <h4 class="text-white font-black tracking-wide">SNEHAL MEHTA</h4>
+                                <h4 class="text-black font-black tracking-wide">SNEHAL MEHTA</h4>
                                 <p class="text-[var(--secondary)] text-xs font-bold uppercase">CEO, Elevate Marketing</p>
                             </div>
                         </div>
-                        <div class="text-3xl text-white/10 font-serif">“</div>
+                        <div class="text-3xl text-black/10 font-serif">“</div>
                     </div>
                 </div>
 
@@ -1559,7 +1813,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                             class="w-10 h-10 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xs">
                             VP</div>
                         <div>
-                            <h4 class="text-white font-bold text-sm">VIVEK PATEL</h4>
+                            <h4 class="text-black font-bold text-sm">VIVEK PATEL</h4>
                             <p class="text-gray-500 text-[10px] uppercase">Founder, Creative Agency</p>
                         </div>
                     </div>
@@ -1569,7 +1823,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
         </div>
     </section>
 
-    <section id="contact" class="bg-[#081b29] text-white py-20 px-10 border-t border-gray-800 reveal-on-scroll">
+    <section id="contact" class="bg-[#ffffff] text-black py-20 px-10 border-t border-gray-800 reveal-on-scroll">
         <div class="max-w-7xl mx-auto">
 
             <div class="flex items-center space-x-4 mb-6">
@@ -1589,7 +1843,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
                 <div class="lg:w-1/3 space-y-10">
                     <div class="space-y-6">
-                        <p class="text-gray-300 leading-relaxed text-justify">
+                        <p class="text-gray-500 leading-relaxed text-justify">
                             Let’s work together to turn your ideas into powerful digital experiences that drive real
                             results.
                             From design to development and marketing, I help your business grow faster and smarter
@@ -1599,7 +1853,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                     <div class="space-y-8">
                         <div class="flex items-center space-x-6 group">
                             <div
-                                class="w-14 h-14 bg-[#0a253a] border border-[var(--primary)] rounded-2xl flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-[#081b29] transition duration-300 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+            class="w-14 h-14 bg-gradient-to-br from-[#f3f0ff] to-[#e8ddff] border border-[var(--secondary)] rounded-2xl flex items-center justify-center text-[var(--secondary)] group-hover:bg-[var(--secondary)] group-hover:text-white transition duration-300 shadow-sm">
                                 <i class="fas fa-phone-alt text-xl"></i>
                             </div>
                             <div>
@@ -1613,8 +1867,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
                         <div class="flex items-center space-x-6 group">
                             <div
-                                class="w-14 h-14 bg-[#0a253a] border border-[var(--secondary)] rounded-2xl flex items-center justify-center text-[var(--secondary)] group-hover:bg-[var(--secondary)] group-hover:text-white transition duration-300 shadow-[0_0_15px_rgba(219,39,119,0.1)]">
-                                <i class="fas fa-envelope text-xl"></i>
+  class="w-14 h-14 bg-gradient-to-br from-[#ecfff7] to-[#ddfff1] border border-[var(--primary)] rounded-2xl flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-white transition duration-300 shadow-sm">                                <i class="fas fa-envelope text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-gray-400 text-sm uppercase tracking-wider">Email Us</h4>
@@ -1626,7 +1879,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
                         <div class="flex items-center space-x-6 group">
                             <div
-                                class="w-14 h-14 bg-[#0a253a] border border-[var(--primary)] rounded-2xl flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-[#081b29] transition duration-300 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+            class="w-14 h-14 bg-gradient-to-br from-[#fff7ec] to-[#ffe4ec] border border-[var(--primary)] rounded-2xl flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-white transition duration-300 shadow-sm">
                                 <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <div>
@@ -1640,30 +1893,30 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
                 <div class="lg:w-2/3">
 <form name="contact" method="POST" data-netlify="true" action="/thankyou.html" target="_self"
-                        class="bg-[#0a253a] p-8 md:p-12 rounded-3xl border border-gray-700 shadow-2xl">
+                        class="bg-gradient-to-br from-[#fff7ec] via-[#fff1d6] to-[#f8d8e8] p-8 md:p-12 rounded-3xl border border-gray-300 shadow-2xl">
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div class="space-y-2">
                                 <label class="text-sm text-gray-400 ml-1">Full Name</label>
                                 <input type="text" name="name" placeholder="John Doe" required
-                                    class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
+                                    class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-sm text-gray-400 ml-1">Email Address</label>
                                 <input type="email" name="email" placeholder="example@mail.com" required
-                                    class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
+                                    class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
                             </div>
 
                         </div>
                         <div class="space-y-2">
                             <label class="text-sm text-gray-400 ml-1">Contact Number</label>
                             <input type="text" name="phone" placeholder="123-456-7890" required
-                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
+                                class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300">
                         </div>
 
                         <div class="space-y-2 mb-6">
                             <label class="text-sm text-gray-400 ml-1">Service Required</label>
                             <select name="service" required
-                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300 appearance-none text-gray-400">
+                                class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300 appearance-none text-gray-400">
                                 <option value="">Select a service</option>
                                 <option>Website Development</option>
                                 <option>Google Business Profile (SEO)</option>
@@ -1680,7 +1933,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                         <div class="space-y-2 mb-8">
                             <label class="text-sm text-gray-400 ml-1">Your Message</label>
                             <textarea rows="5" name="message" placeholder="How can we help you?" required
-                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300"></textarea>
+                                class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-5 py-4 focus:outline-none focus:border-[var(--primary)] transition duration-300"></textarea>
                         </div>
 
                         <button type="submit"
@@ -1703,7 +1956,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
             <!-- Logo + About -->
             <div>
-             <img src="menulogo.png" alt="Logo" class="w-32 mb-4">
+             <img src="logo.png" alt="Logo" class="w-40 mb-4">
                 <h3 class="text-lg font-semibold mb-4 text-white">DR Smart Business Promotion</h3>  
                 <p class="text-gray-400 text-sm text-justify">
                     Crafting modern digital experiences that help your brand stand out and grow online.
@@ -1886,16 +2139,16 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
                 <div class="flex items-start justify-between gap-4">
                     <div>
-                        <h3 class="text-xl md:text-2xl font-bold text-white">Quick Enquiry</h3>
-                        <p class="text-gray-300 text-sm mt-1">Leave nahi karna—apni requirement select karo, hum details lekar contact kar lenge.</p>
+                        <h3 class="text-xl md:text-2xl font-bold text-black">Quick Enquiry</h3>
+                        <p class="text-gray-500 text-sm mt-1">Leave nahi karna—apni requirement select karo, hum details lekar contact kar lenge.</p>
                     </div>
                     <button id="exitLeadModalClose" aria-label="Close"
-                        class="text-white/80 hover:text-white text-3xl leading-none font-bold">&times;</button>
+                        class="text-black/80 hover:text-black text-3xl leading-none font-bold">&times;</button>
                 </div>
 
                 <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <button type="button" data-service="Website Development"
-                        class="exit-service-btn text-left bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 hover:border-[var(--primary)] transition">
+                        class="exit-service-btn text-left bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 hover:border-[var(--primary)] transition">
                         <div class="text-[var(--primary)] font-bold flex items-center gap-2">
                             <i class="fas fa-laptop-code"></i>
                             Website
@@ -1903,7 +2156,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                     </button>
 
                     <button type="button" data-service="Google Business Profile (SEO)"
-                        class="exit-service-btn text-left bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 hover:border-[var(--primary)] transition">
+                        class="exit-service-btn text-left bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 hover:border-[var(--primary)] transition">
                         <div class="text-[var(--primary)] font-bold flex items-center gap-2">
                             <i class="fas fa-location-dot"></i>
                             GMB
@@ -1911,7 +2164,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                     </button>
 
                     <button type="button" data-service="Website Maintenance"
-                        class="exit-service-btn text-left bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 hover:border-[var(--primary)] transition">
+                        class="exit-service-btn text-left bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 hover:border-[var(--primary)] transition">
                         <div class="text-[var(--primary)] font-bold flex items-center gap-2">
                             <i class="fas fa-wrench"></i>
                             Maintain
@@ -1926,7 +2179,7 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
                 <div class="mt-6 flex items-center justify-end gap-3">
                     <button id="exitLeadModalLater"
                         type="button"
-                        class="px-4 py-2 rounded-full border border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white transition">
+                        class="px-4 py-2 rounded-full border border-gray-600 text-gray-500 hover:border-gray-400 hover:text-black transition">
                         Not now
                     </button>
                 </div>
@@ -1942,53 +2195,53 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
         <div
             class="min-h-screen flex items-center justify-center p-4">
 <div id="leadModalCard"
-                class="w-full max-w-lg bg-[#0a253a] border border-gray-700 rounded-2xl p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-200 max-h-[85vh] overflow-y-auto overscroll-contain flex flex-col">
+                class="w-full max-w-lg bg-[#ffffff] border border-gray-700 rounded-2xl p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-200 max-h-[85vh] overflow-y-auto overscroll-contain flex flex-col">
                 <div class="flex items-start justify-between gap-4">
                     <div>
-                        <h3 class="text-xl md:text-2xl font-bold text-white"> Let’s Grow Your Business</h3>
-                    <p class="text-gray-300 text-sm mt-1">Share your requirement and we’ll help you build a powerful online presence.</p>
+                        <h3 class="text-xl md:text-2xl font-bold text-black"> Let’s Grow Your Business</h3>
+                    <p class="text-gray-500 text-sm mt-1">Share your requirement and we’ll help you build a powerful online presence.</p>
                     <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
-                        <a href="https://wa.me/919081908478?text=Hello%20DR%20Smart%20Business%20Promotion%20👋%20I%20am%20interested%20in%20your%20Website%20and%20Local%20SEO%20services." target="_blank" class="flex items-center gap-2 text-[var(--primary)] bg-[#081b29] border border-gray-700 rounded-full px-4 py-2 hover:bg-[#0a253a] transition">
+                        <a href="https://wa.me/919081908478?text=Hello%20DR%20Smart%20Business%20Promotion%20👋%20I%20am%20interested%20in%20your%20Website%20and%20Local%20SEO%20services." target="_blank" class="flex items-center gap-2 text-[var(--primary)] bg-[#ffffff] border border-gray-700 rounded-full px-4 py-2 hover:bg-[#0a253a] transition">
                             <i class="fab fa-whatsapp"></i>
                             <span class="text-sm font-bold">WhatsApp</span>
                         </a>
-                        <a href="mailto:drsmartbusinesspromotion@gmail.com" class="flex items-center gap-2 text-[var(--secondary)] bg-[#081b29] border border-gray-700 rounded-full px-4 py-2 hover:bg-[#0a253a] transition">
+                        <a href="mailto:drsmartbusinesspromotion@gmail.com" class="flex items-center gap-2 text-[var(--secondary)] bg-[#ffffff] border border-gray-700 rounded-full px-4 py-2 hover:bg-[#0a253a] transition">
                             <i class="fas fa-envelope"></i>
                             <span class="text-sm font-bold">Email</span>
                         </a>
                     </div>
                     </div>
                     <button id="leadModalClose"
-                        class="text-white/80 hover:text-white text-3xl leading-none font-bold">&times;</button>
+                        class="text-black/80 hover:text-black text-3xl leading-none font-bold">&times;</button>
                 </div>
 
                 <form id="leadForm" class="mt-5" novalidate>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="space-y-2">
-                            <label class="text-sm text-gray-300">User Name</label>
+                            <label class="text-sm text-gray-500">User Name</label>
                             <input id="leadName" name="name" type="text" required
-                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)]"
+                                class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 text-black placeholder-gray-500 focus:outline-none focus:border-[var(--primary)]"
                                 placeholder="Your name" />
                         </div>
                         <div class="space-y-2">
-                            <label class="text-sm text-gray-300">Email</label>
+                            <label class="text-sm text-gray-500">Email</label>
                             <input id="leadEmail" name="email" type="email" required
-                                class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)]"
+                                class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 text-black placeholder-gray-500 focus:outline-none focus:border-[var(--primary)]"
                                 placeholder="example@mail.com" />
                         </div>
                     </div>
 
                     <div class="space-y-2 mt-4">
-                        <label class="text-sm text-gray-300">Contact Number</label>
+                        <label class="text-sm text-gray-500">Contact Number</label>
                         <input id="leadPhone" name="phone" type="text" required inputmode="numeric"
-                            class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)]"
+                            class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 text-black placeholder-gray-500 focus:outline-none focus:border-[var(--primary)]"
                             placeholder="e.g. 9081908478" />
                     </div>
 
                     <div class="space-y-2 mt-4">
-                        <label class="text-sm text-gray-300">Services</label>
+                        <label class="text-sm text-gray-500">Services</label>
                         <select id="leadService" name="service" required
-                            class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--primary)]">
+                            class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 text-black focus:outline-none focus:border-[var(--primary)]">
                             <option value="" selected disabled>Select a service</option>
                             <option value="Website Development">Website Development</option>
                             <option value="Google Business Profile (SEO)">Google Business Profile (SEO)</option>
@@ -2003,9 +2256,9 @@ document.getElementById('universalModal').addEventListener('click', function(e) 
 
                     <!-- MESSAGE BOX (ADD-ONLY) -->
                     <div class="space-y-2 mt-4">
-                        <label class="text-sm text-gray-300">Message</label>
+                        <label class="text-sm text-gray-500">Message</label>
                         <textarea id="leadMessage" name="message" rows="4" placeholder="Write your requirement..."
-                            class="w-full bg-[#081b29] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition duration-300"></textarea>
+                            class="w-full bg-[#ffffff] border border-gray-700 rounded-xl px-4 py-3 text-black placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition duration-300"></textarea>
                     </div>
 
                     <div class="mt-5">
@@ -2231,18 +2484,31 @@ const name = (fd.get('name') || '').toString().trim();
     </div>
 
 </a>
-    <a href="#" class="fixed bottom-6 right-6 z-[100] group">
+ <button id="toTopBtn" type="button" aria-label="Back to top"
+class="fixed bottom-6 right-6 z-[999999] group">
 
-        <div
-            class="relative w-14 h-14 bg-[#0a253a] border-2 border-[var(--primary)] text-[var(--primary)] rounded-full flex items-center justify-center text-xl shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-500 group-hover:border-[var(--secondary)] group-hover:text-[var(--secondary)] group-hover:-translate-y-2">
+    <div
+        class="relative w-14 h-14 bg-[#0a253a] border-2 border-[var(--primary)] text-[var(--primary)] rounded-full flex items-center justify-center text-xl shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-500 group-hover:border-[var(--secondary)] group-hover:text-[var(--secondary)] group-hover:-translate-y-2">
 
-            <i class="fas fa-chevron-up transition-transform duration-500 group-hover:scale-125"></i>
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</button>
+<script>
+document.getElementById("toTopBtn").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
+<script>
+document.getElementById("enquiryBtn").addEventListener("click", function () {
+    const modal = document.getElementById("leadModal");
 
-            <div
-                class="absolute inset-0 rounded-full bg-[var(--secondary)]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity">
-            </div>
-        </div>
-    </a>
+    modal.classList.remove("opacity-0", "pointer-events-none");
+    modal.classList.add("opacity-100", "pointer-events-auto");
+});
+</script>
 
 </body>
 
